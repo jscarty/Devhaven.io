@@ -123,14 +123,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+CURRENT_PATH = os.path.dirname(__file__)
+
+STATIC_ROOT = os.path.join(CURRENT_PATH, 'static')
+
 STATIC_URL = '/static/'
-
-STATIC_ROOT = 'staticfiles'
-
-try:
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, '../webapp/static'),)
-except:
-    for i in range(0, 100):
-        print("ERROR")
 
 LOGIN_URL = '/login/'
