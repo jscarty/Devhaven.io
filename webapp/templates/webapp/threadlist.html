@@ -1,0 +1,203 @@
+{% extends "webapp/index.html" %}
+
+{% block content %}
+<script>
+  tinymce.init({ selector:'textarea',
+  plugins: "codesample",
+  toolbar: "styleselect | undo redo | removeformat | bold italic underline |  aligncenter alignjustify  | bullist numlist outdent indent | link | fontsizeselect | codesample",
+  content_css: "../../static/webapp/custom_content.css",
+  'paste_remove_spans': true,
+  fontsize_formats: "13px 18px 21px",
+  style_formats:
+   [
+      {
+         title:'Inline',
+         items:[
+            {
+               title:'Bold',
+               icon:'bold',
+               format:'bold'
+            },
+            {
+               title:'Italic',
+               icon:'italic',
+               format:'italic'
+            },
+            {
+               title:'Underline',
+               icon:'underline',
+               format:'underline'
+            },
+            {
+               title:'Strikethrough',
+               icon:'strikethrough',
+               format:'strikethrough'
+            },
+            {
+               title:'Superscript',
+               icon:'superscript',
+               format:'superscript'
+            },
+            {
+               title:'Subscript',
+               icon:'subscript',
+               format:'subscript'
+            },
+            {
+               title:'Code',
+               icon:'code',
+               format:'code'
+            }
+         ]
+      },
+      {
+         title:'Blocks',
+         items:[
+            {
+               title:'Paragraph',
+               format:'p'
+            },
+            {
+               title:'Blockquote',
+               format:'blockquote'
+            },
+            {
+               title:'Div',
+               format:'div'
+            },
+            {
+               title:'Pre',
+               format:'pre'
+            }
+         ]
+      },
+      {
+         title:'Alignment',
+         items:[
+            {
+               title:'Left',
+               icon:'alignleft',
+               format:'alignleft'
+            },
+            {
+               title:'Center',
+               icon:'aligncenter',
+               format:'aligncenter'
+            },
+            {
+               title:'Right',
+               icon:'alignright',
+               format:'alignright'
+            },
+            {
+               title:'Justify',
+               icon:'alignjustify',
+               format:'alignjustify'
+            }
+         ]
+      }
+   ],
+  setup : function(ed) {
+     ed.on('init', function(ed) {
+      ed.target.editorCommands.execCommand("fontName", false, "Arial");
+      ed.target.editorCommands.execCommand("fontSize", false, "13px");
+     });
+    }
+  });
+</script>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../../">Devhaven.io</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../threadfeed">Threads</a></li>
+      <li><a href="../../startthread">Start Thread</a></li>
+      {% if authenticated %}
+        <li><a href="../../yourfeed">Your Threads</a></li>
+      {% endif %}
+    </ul>
+    {% if not authenticated %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../../register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="../../login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    {% endif %}
+    {% if authenticated %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../../logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    {% endif %}
+  </div>
+</nav>
+
+
+<div class="container">
+    <div class="content">
+        <h2 class="overflow">{{ post.title }}</h2>
+        <hr>
+        <div class="over">
+        <p>
+            {{ post.text | safe }}
+        </p>
+        </div>
+        <hr>
+
+        <p align="right">
+            Written by <span class="author"><span class="green"><b>{{ post.author }}</b></span> on {{ post.created_on }}<br>
+            Posted in <span class="green"><b>{{ post.field }}</b></span><br>
+            {% if post.author == request.user %}
+              <a href="{% url 'post_edit' pk=post.pk %}" class="link">Edit</a> or <a href="{% url 'delete_new' pk=post.pk %}" class="link">Delete</a> this thread<br>
+            {% endif %}
+            <br>
+        </p>
+    </div>
+    <br>
+    {% if post.comment_set.all %}
+    <div class="comments">
+        {% for comment in post.comment_set.all %}
+            <div class="content">
+              <p>
+                  {{ comment.text | safe }}
+              </p>
+              <p align="right">
+                  <a href="{{ comment.website }}" class="link">{{ comment.name }}</a> said on {{ comment.created_on }}<br>
+                  <a class="link" id="upvote">&uarr;</a> <a class="red" id="downvote">&darr;</a>
+              </p>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <br>
+
+    {% if request.user.is_authenticated %}
+    <div class="content">
+        <h4 align="center">Add Response</h4>
+        <p id="description">Before posting a new response, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <code class="code">LaTeX</code> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p>
+        <form action="" method="POST" action="" class="form-horizontal">
+            {% csrf_token %}
+            <div class="form-group">
+              <div class="col-md-12">     
+                <textarea id="id_text" name="text" rows="10" placeholder="Content" pattern=".{120,}" title="The content must be at least 120 characters in length." class="tinymce"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary" id="right-float">Submit New Response</button>
+              </div>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+
+    {% if not request.user.is_authenticated %}
+    <div class="content" style="font-size: 13px;">
+      You must be a regsistered user to post responses.
+    </div>
+    {% endif %}
+    <br>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "webapp/index.html" %}
+
+{% block content %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../">Devhaven.io</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../threadfeed">Threads</a></li>
+      <li><a href="../startthread">Start Thread</a></li>
+      {% if authenticated %}
+        <li><a href="../yourfeed">Your Threads</a></li>
+      {% endif %}
+    </ul>
+    {% if not authenticated %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="../login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    {% endif %}
+    {% if authenticated %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    {% endif %}
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="content" id="threadfeed">
+    <p></p>
+{% for post in posts %}
+    <div>
+        <p><a href="../thread/{{ post.slug }}"><u>{{ post.title }}</u></a></p>
+        <p align="right">Written by <span class="green"><b>{{ post.author }}</b></span> on {{ post.created_on }}</p>
+        <p align="right">Posted in <span class="green"><b>{{ post.field }}</b></span></p>
+    </div>
+    <br>
+{% endfor %}
+  </div>
+</div>
+<br>
+{% endblock %}

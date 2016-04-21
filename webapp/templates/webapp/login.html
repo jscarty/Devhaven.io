@@ -1,0 +1,43 @@
+{% extends "webapp/index.html" %}
+
+{% block content %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../">Devhaven.io</a>
+    </div>
+    <ul class="nav navbar-nav">
+		<li><a href="../threadfeed">Threads</a></li>
+		<li><a href="../startthread">Start Thread</a></li>
+	    {% if authenticated %}
+			<li><a href="../yourfeed">Your Threads</a></li>
+	    {% endif %}
+    </ul>
+    {% if not authenticated %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="../login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    {% endif %}
+    {% if authenticated %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    {% endif %}
+  </div>
+</nav>
+
+<div class="container" id="vertical-center">
+	<div class="wrapper">
+		<form class="form-register" method='POST' action='' autocomplete="off" role="form"> {% csrf_token %}   
+				<h1 align="center">Login</h1>
+				<p align="center" class="contained-p">{{ instruction }}</p>
+				<input id="first" type="text" class="form-control" name="username" placeholder="Username" required="true" autofocus="" /> 
+				<input id="third" type="password" class="form-control" name="password" placeholder="Password" required="true"/>   
+				<p>For security purposes, passwords can only be reset by <b>administrators</b>. There's only one administrator, so send an email to me, with your username and new password at <a href="mailto:henry.david.zhu@gmail.com"><b>henry.david.zhu@gmail.com</b></a>.
+				<button class="btn btn-primary btn-sm" type="submit" id="sign-up">Log In</button>   
+		</form>
+	</div>
+	<br>
+</div>
+{% endblock %}
