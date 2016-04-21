@@ -127,6 +127,10 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = 'staticfiles'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, '../webapp/static'),)
+try:
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, '../webapp/static'),)
+except:
+    for i in range(0, 100):
+        print("ERROR")
 
 LOGIN_URL = '/login/'
