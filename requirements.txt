@@ -8,5 +8,4 @@ django-simple-email-confirmation==0.12
 django-tinymce==2.3.0
 gunicorn==19.4.5
 pep8==1.6.2
-virtualenv==15.0.1
 whitenoise==3.0
