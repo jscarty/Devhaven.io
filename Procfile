@@ -1,1 +1,1 @@
-web: guincorn mysite.wsgi --log-file-
+web: guincorn mysite.wsgi

@@ -6,6 +6,7 @@ DATABASES = settings.DATABASES
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
+
 # Update database configuration with $DATABASE_URL.
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
