@@ -127,6 +127,6 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = 'mysite/webapp/static'
 
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, "../webapp/static"), )
+STATICFILES_DIRS = ( os.path.join(ROOT_PATH = os.path.dirname(__file__), "static"), )
 
 LOGIN_URL = '/login/'
