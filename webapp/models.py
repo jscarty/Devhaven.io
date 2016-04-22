@@ -48,6 +48,7 @@ class Post(models.Model):
         ('Algorithms and Data Structures', 'Algorithms and Data Structures'),
         ('Databases', 'Databases'),
         ('IDE / Text Editors', 'IDE / Text Editors'),
+        ('Community Discussion', 'Community Discussion'),
         ('Tutorial', 'Tutorial'),
         ('Opinion', 'Opinion'),
         ('Miscellaneous', 'Miscellaneous')
