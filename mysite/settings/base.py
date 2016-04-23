@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'd7arsdgdesckdh',                     
         'USER': 'tnxinboigblasf',
         'PASSWORD': 'uZ9Snku6MQIvJi15nGG8IT12Lo',
-        'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+        'HOST': 'ec2-54-197-254-213.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
 }
