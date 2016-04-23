@@ -9,4 +9,4 @@ django-tinymce==2.3.0
 gunicorn==19.4.5
 pep8==1.6.2
 whitenoise==3.0
-psycopg2==2.4.4
+psycopg2==2.6.1
