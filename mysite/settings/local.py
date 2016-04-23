@@ -73,16 +73,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'dbpt1duqgntocd',                     
-#        'USER': 'lpdzvtukzvnfla',
-#        'PASSWORD': 'oOjfBzWzF0cjGyGglZjZX_m7tx',
-#        'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-#        'PORT': '5432',                      # Set to empty string for default.
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 
