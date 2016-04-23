@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'dbpt1duqgntocd',                     
         'USER': 'lpdzvtukzvnfla',
         'PASSWORD': 'oOjfBzWzF0cjGyGglZjZX_m7tx',
-        'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+        'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
 }
