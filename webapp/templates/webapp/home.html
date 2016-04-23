@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends "webapp/index.html" %}
 
 {% block content %}
@@ -62,69 +61,4 @@
     </div>
     <br>
 </div>
-=======
-{% extends "webapp/index.html" %}
-
-{% block content %}
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Devhaven.io</a>
-    </div>
-    <ul class="nav navbar-nav">
-		<li><a href="threadfeed">Threads</a></li>
-		<li><a href="startthread">Start Thread</a></li>
-    {% if authenticated %}
-		<li><a href="yourfeed">Your Threads</a></li>
-    {% endif %}
-    </ul>
-    {% if not authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    {% endif %}
-    {% if authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-      </ul>
-    {% endif %}
-  </div>
-</nav>
-
-<div class="container">
-  <div class="content">
-    <div style="font-size: 13px;"><b>Message:</b> We are currently switching our databases from <i>sqlite3</i> to <i>postgresql</i>, in order to preserve user data even after our dyno sleeps per 24 hours. We advise to not register as a new user, or post new threads until our database has been successfully switched.</div>
-  	<h1 align="center">{{template_title}}</h1>
-    {% if not authenticated %}
-      <p align="center">Simple programming discussion.</p>
-    {% endif %}
-  	<br>
-      <div class="row">
-          <div class="col-md-6" id="left">
-              <div align="center"><i>What <b>Devhaven.io</b> is</i></div><br>
-              Devhaven.io is a newly launched programming discussion community. I believe in a clean, minimalist, and beautiful site that delivers a <u>pure programming discussion experience</u>, where there are no distractions of reputation and invites.The community is designed to be as friendly as possible, which is why we do not implement a reputation voting system. However, in order to make the community more connected, I'm currently pursuing an aggregation of the profile features you would like on this site. These can include an avatar picture, workplace, website, school, etc. If you have a list of these subbestions suggestions, contact <b>Henry</b> at <a href="mailto:henry.david.zhu@gmail.com">henry.david.zhu@gmail.com</a>.<br><br>I know that the site looks pretty barren at the moment, but it's the first version, and everything has to be working first.
-          </div>
-          <div class="col-md-6" id="right">
-  			<div align="center"><i>Updates</i></div>
-        <br>
-        <div class="update">
-          <b>4/21/2016</b>: Fixed a bug where "Community Discussion" wasn't recognized as a thread topic.
-        </div>
-  			<br>
-        <div class="update">
-          <b>4/21/2016</b>: Bootstrap glyphicons added to the site. 
-        </div>
-        <br>
-  			<div class="update">
-  				<b>4/20/2016</b>: <a href="#"><b>Devhaven.io</b></a> is up! It's currently being hosted on a single Heroku dyno, a lightweight Linux container. We'll be planning to expand this soon, as it will only provide us 5MB of data storage.
-  			</div>
-          </div>
-      </div>
-      <br>
-    </div>
-    <br>
-</div>
->>>>>>> 9bf74ec15ee29c5d5e248d2871a37ccaced40867
 {% endblock %}
