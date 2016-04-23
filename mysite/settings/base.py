@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbpt1duqgntocd',                     
-        'USER': 'lpdzvtukzvnfla',
-        'PASSWORD': 'oOjfBzWzF0cjGyGglZjZX_m7tx',
-        'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+        'NAME': 'd7arsdgdesckdh',                     
+        'USER': 'tnxinboigblasf',
+        'PASSWORD': 'uZ9Snku6MQIvJi15nGG8IT12Lo',
+        'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
 }
