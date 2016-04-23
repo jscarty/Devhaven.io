@@ -1,7 +1,7 @@
 from .base import *
 
 try:
-	from .local import *
+	from .base import *
 	live = False
 
 except:
