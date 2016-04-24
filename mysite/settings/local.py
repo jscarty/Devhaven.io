@@ -79,8 +79,8 @@ DATABASES = {
         'NAME': 'd37t9h61jrpkch',                     
         'USER': 'igwuqxdtvtgstz',
         'PASSWORD': 'ZEGDA-Gf_w39kkwehso7zUDa0k',
-        'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-        'PORT': '5432',                      # Set to empty string for default.
+        'HOST': '',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
     }
 }
 
