@@ -20,7 +20,7 @@ class User(models.Model):
 		return self.username
 
 class Post(models.Model):
-    title = models.CharField(max_length=150)
+    title = models.TextField(max_length=150)
     slug = models.SlugField(max_length=255)
     text = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
