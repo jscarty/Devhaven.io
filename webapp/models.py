@@ -21,7 +21,7 @@ class User(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=150)
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=255)
     text = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     up_vote = 0 # num of up votes
