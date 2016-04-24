@@ -214,8 +214,8 @@ input[type='text'], input[type='email'], input[type='password'] {
 
 /* Layout styles */
 
-#left {
-	border-right: 1px solid #ccc;
+#right {
+	border-left: 1px solid #ccc;
 }
 
 .form-register {
