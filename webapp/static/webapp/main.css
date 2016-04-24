@@ -281,9 +281,18 @@ textarea {
   overflow: hidden;
 }
 
+.whitespace {
+  height: 15px;
+  display: none;
+}
+
 /* Media queries */
 @media screen and (max-width: 993px) {
     #right {
     	border-left: 0;
+    }
+
+    .whitespace {
+      display: block;
     }
 }
