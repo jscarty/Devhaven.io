@@ -164,6 +164,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 .author a, .link {
    color: #239023;
    font-weight: bold;
+   cursor: pointer;
 }
 
 .green {

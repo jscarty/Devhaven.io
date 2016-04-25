@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.template import RequestContext
 from django.contrib.auth.decorators import user_passes_test
-from .models import Post
+from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.core.urlresolvers import reverse
 from django.utils import timezone
@@ -146,6 +146,10 @@ def delete_new(request, pk):
     posts = Post.objects.all().filter().order_by('-created_on')
     return render(request, 'webapp/deletemessage.html')
 
+def delete_response(request, pk):
+    responseToDelete = Comment.objects.get(pk=pk).delete()
+    return render(request, 'webapp/deletemessage.html')
+
 def view_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
     form = CommentForm(request.POST or None)
@@ -174,7 +178,7 @@ def view_post(request, slug):
 
 def post_list(request):
     global posts
-    posts = Post.objects.all().filter().order_by('-created_on')
+    posts = Post.objects.all().filter().order_by('-created_on') # Use filter on the QuerySet to sort by time
     context = {'posts' : posts, 'authenticated': request.user.is_authenticated()}
     return render(request, 'webapp/threadfeed.html', context)
 

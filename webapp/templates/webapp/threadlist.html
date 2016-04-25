@@ -163,6 +163,9 @@
               </p>
               <p align="right">
                   <a href="{{ comment.website }}" class="link">{{ comment.name }}</a> said on {{ comment.created_on }}<br>
+                  {% if post.author == request.user %}
+                     <a href="{% url 'delete_response' pk=comment.pk %}" class="link">Delete</a> this response<br>
+                  {% endif %}
               </p>
             </div>
             <br>

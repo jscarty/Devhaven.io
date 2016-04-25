@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^thread/(?P<slug>[-\w]+)/$', views.view_post, name='blog_post_detail'),
     url(r'^thread/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^thread/(?P<pk>\d+)/delete/$', views.delete_new, name='delete_new'),
+    url(r'^response/(?P<pk>\d+)/delete/$', views.delete_response, name='delete_response'),
     url(r'^yourfeed/$', views.your_post, name='your_post'),
     url(r'^tinymce/', include('tinymce.urls')),
 ]
