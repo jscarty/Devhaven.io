@@ -147,7 +147,7 @@
         <p align="right">
             Written by <span class="author"><span class="green"><b>{{ post.author }}</b></span> on {{ post.created_on }}<br>
             Posted in <span class="green"><b>{{ post.field }}</b></span><br>
-            {% if post.author == request.user %}
+            {% if post.author == request.user  or request.user.username == "henrydavidzhu" %}
               <a href="{% url 'post_edit' pk=post.pk %}" class="link">Edit</a> or <a href="{% url 'delete_new' pk=post.pk %}" class="link">Delete</a> this thread<br>
             {% endif %}
             <br>
