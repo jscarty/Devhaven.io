@@ -123,12 +123,13 @@ def add_post(request):
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    postAuthor = post.author
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
             post.title = form.cleaned_data.get("title")
-            post.author = request.user
+            post.author = postAuthor
             post.published_date = timezone.now()
             post.save()
             redirectLink = '../../' + str(post.slug)
