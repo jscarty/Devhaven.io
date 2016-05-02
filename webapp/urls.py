@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^thread/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^thread/(?P<pk>\d+)/delete/$', views.delete_new, name='delete_new'),
     url(r'^response/(?P<pk>\d+)/delete/$', views.delete_response, name='delete_response'),
+    url(r'^response/(?P<pk>\d+)/edit/$', views.response_edit, name='response_edit'),
     url(r'^yourfeed/$', views.your_post, name='your_post'),
     url(r'^tinymce/', include('tinymce.urls')),
 ]

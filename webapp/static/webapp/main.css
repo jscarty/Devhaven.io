@@ -23,13 +23,6 @@ html, body {
   width: 100%;
 }
 
-.advertizement {
-  width: 500px;
-  margin: 0 auto;
-  box-shadow: 11px 11px 11px #8c8c8c;
-  border-radius: 5px;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 }

@@ -124,6 +124,7 @@ def add_post(request):
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     postAuthor = post.author
+
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -140,6 +141,26 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
 
     return render(request, 'webapp/threadedit.html', {'post': post, 'authenticated': request.user.is_authenticated()})
+
+def response_edit(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    name = comment.name
+
+    if request.method == "POST":
+        form = CommentForm(request.POST, instance=comment)
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.name = name
+            comment.published_date = timezone.now()
+            comment.save()
+            return render(request, 'webapp/responseeditmessage.html')
+        else:
+            print("Errors: " + str(formerrors))
+    elif request.POST:
+        form = CommentForm(instance=comment)
+
+    return render(request, 'webapp/responseedit.html', {'comment': comment, 'authenticated': request.user.is_authenticated()})
 
 def delete_new(request, pk):
     postToDelete = Post.objects.get(pk=pk).delete()
