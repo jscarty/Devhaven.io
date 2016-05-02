@@ -154,7 +154,7 @@ def response_edit(request, pk):
             comment.name = name
             comment.published_date = timezone.now()
             comment.save()
-            return render(request, 'webapp/responseeditmessage.html')
+            return render(request, 'webapp/responseeditmessage.html', {'authenticated': request.user.is_authenticated()})
         else:
             print("Errors: " + str(formerrors))
     elif request.POST:
@@ -166,11 +166,11 @@ def delete_new(request, pk):
     postToDelete = Post.objects.get(pk=pk).delete()
     global posts
     posts = Post.objects.all().filter().order_by('-created_on')
-    return render(request, 'webapp/deletemessage.html')
+    return render(request, 'webapp/deletemessage.html', {'authenticated': request.user.is_authenticated()})
 
 def delete_response(request, pk):
     responseToDelete = Comment.objects.get(pk=pk).delete()
-    return render(request, 'webapp/deletemessage.html')
+    return render(request, 'webapp/deletemessage.html', {'authenticated': request.user.is_authenticated()})
 
 def view_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
