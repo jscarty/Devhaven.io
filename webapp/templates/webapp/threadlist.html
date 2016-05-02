@@ -168,7 +168,7 @@
               </p>
               <p align="right">
                   <a href="{{ comment.website }}" class="link">{{ comment.name }}</a> said on {{ comment.created_on }}<br>
-                  {% if post.author == request.user or request.user.username == "henrydavidzhu" %}
+                  {% if comment.author == request.user or request.user.username == "henrydavidzhu" %}
                      <a href="{% url 'response_edit' pk=comment.pk %}" class="link">Edit</a> or <a href="{% url 'delete_response' pk=comment.pk %}" class="link">Delete</a> this response<br>
                   {% endif %}
               </p>
