@@ -136,18 +136,13 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .content {
-  box-shadow: 11px 11px 11px #8c8c8c;
   width: 100%;
 }
 
 .navbar {
-  box-shadow: 11px 11px 11px #8c8c8c;
   background-color: white;
 }
 
-.code {
-  box-shadow: 2px 2px 2px #8c8c8c;
-}
 
 .navbar-default .navbar-nav > li > a {
     color: black;
@@ -223,7 +218,7 @@ input[type='text'], input[type='email'], input[type='password'] {
   width: 500px;
   padding: 20px;
   margin: 0 auto;
-  box-shadow: 11px 11px 11px #8c8c8c;
+  
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
