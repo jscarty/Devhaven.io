@@ -4,7 +4,7 @@
 <script>
   tinymce.init({ selector:'textarea',
   plugins: "codesample link",
-  toolbar: "styleselect | undo redo | removeformat | bold italic underline |  aligncenter alignjustify  | bullist numlist outdent indent | link | fontsizeselect | codesample",
+  toolbar: "styleselect | undo redo | removeformat | bold italic underline |  aligncenter alignjustify  | bullist numlist outdent indent | link | image | fontsizeselect | codesample",
   content_css: "../static/webapp/custom_content.css",
   'paste_remove_spans': true,
   fontsize_formats: "13px 18px 21px",
@@ -136,7 +136,7 @@
   <div class="content">
   	<h1 align="center">Modify an existing discussion.</h1>
     
-    <p id="description">Before editing a new thread, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <code class="code">LaTeX</code> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p>
+    <p id="description">Before editing a thread, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <code class="code">LaTeX</code> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p>
 
       <form action="" class='form-horizontal' method="POST" action="">
         {% csrf_token %}
