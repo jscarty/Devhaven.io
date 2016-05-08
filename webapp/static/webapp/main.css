@@ -166,10 +166,6 @@ input[type='text'], input[type='email'], input[type='password'] {
   color: #239023;
 }
 
-.red {
-  color: #ff1a1a;
-}
-
 .mce-title {
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
