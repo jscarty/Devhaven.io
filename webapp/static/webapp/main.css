@@ -12,27 +12,21 @@ html, body {
 }
 
 .accent {
-  background: -moz-linear-gradient(45deg, rgba(51,102,0,1) 0%, rgba(89,179,0,1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(51,102,0,1)), color-stop(100%, rgba(89,179,0,1))); /* safari4+,chrome */
-  background: -webkit-linear-gradient(45deg, rgba(51,102,0,1) 0%, rgba(89,179,0,1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(45deg, rgba(51,102,0,1) 0%, rgba(89,179,0,1) 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient(45deg, rgba(51,102,0,1) 0%, rgba(89,179,0,1) 100%); /* ie10+ */
-  background: linear-gradient(45deg, rgba(51,102,0,1) 0%, rgba(89,179,0,1) 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59b300', endColorstr='#336600',GradientType=1 ); /* ie6-9 */
+  background: #248f24;
   height: 3px;
   width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
+  font-weight: 400;
 }
 
 h1 {
-	font-size: 26px;
+  font-size: 26px;
 }
 
 h2 {
-	font-size: 25px;
+  font-size: 25px;
 }
 
 h4 {
@@ -96,8 +90,8 @@ input:-webkit-autofill {
 }
 
 input[type='text'], input[type='email'], input[type='password'] {
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0;
 }
 
 #id_title, #id_text {
@@ -105,21 +99,21 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 #first, #second, #third {
-	border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 #first {
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 #third {
-	border-bottom-left-radius: 5px;a
-	border-bottom-right-radius: 5px;	
+  border-bottom-left-radius: 5px;a
+  border-bottom-right-radius: 5px;  
 }
 
 #first, #second {
-	border-bottom: 0;
+  border-bottom: 0;
 }
 
 .content {
@@ -207,7 +201,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 /* Layout styles */
 
 #right {
-	border-left: 1px solid #ccc;
+  border-left: 1px solid #ccc;
 }
 
 .form-register {
@@ -241,11 +235,11 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 #sign-up {
-	width: 100px;
-	font-size: 12px;
-	padding: 5px;
-	margin-left: 358px;
-	border-radius: 4px;
+  width: 100px;
+  font-size: 12px;
+  padding: 5px;
+  margin-left: 358px;
+  border-radius: 4px;
 }
 
 #searchbox {
@@ -281,7 +275,7 @@ textarea {
 /* Media queries */
 @media screen and (max-width: 993px) {
     #right {
-    	border-left: 0;
+      border-left: 0;
     }
 
     .whitespace {
