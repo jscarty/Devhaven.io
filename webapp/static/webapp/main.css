@@ -277,7 +277,7 @@ textarea {
 }
 
 * {
-  font-family: Georgia, serif !important;
+  font-family: Georgia, serif;
 }
 /* Media queries */
 @media screen and (max-width: 993px) {
