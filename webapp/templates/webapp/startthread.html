@@ -99,7 +99,7 @@
    ],
   setup : function(ed) {
      ed.on('init', function(ed) {
-      ed.target.editorCommands.execCommand("fontName", false, "Arial");
+      ed.target.editorCommands.execCommand("fontName", false, "Georgia");
       ed.target.editorCommands.execCommand("fontSize", false, "13px");
      });
     }
@@ -120,13 +120,13 @@
     </ul>
     {% if not authenticated %}
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="../login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="../register">Sign Up</a></li>
+        <li><a href="../login">Login</a></li>
       </ul>
     {% endif %}
     {% if authenticated %}
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <li><a href="../logout/">Logout</a></li>
       </ul>
     {% endif %}
   </div>

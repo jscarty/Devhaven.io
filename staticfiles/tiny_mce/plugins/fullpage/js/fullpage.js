@@ -31,7 +31,7 @@
 		'Korean (iso-2022-kr)=iso-2022-kr,' +
 		'ASCII (us-ascii)=us-ascii';
 
-	var defaultFontNames = 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;Georgia=georgia,times new roman,times,serif;Tahoma=tahoma,arial,helvetica,sans-serif;Times New Roman=times new roman,times,serif;Verdana=verdana,arial,helvetica,sans-serif;Impact=impact;WingDings=wingdings';
+	var defaultFontNames = 'Georgia=Georgia,helvetica,sans-serif;Courier New=courier new,courier,monospace;Georgia=georgia,times new roman,times,serif;Tahoma=tahoma,Georgia,helvetica,sans-serif;Times New Roman=times new roman,times,serif;Verdana=verdana,Georgia,helvetica,sans-serif;Impact=impact;WingDings=wingdings';
 	var defaultFontSizes = '10px,11px,12px,13px,14px,15px,16px';
 
 	function setVal(id, value) {

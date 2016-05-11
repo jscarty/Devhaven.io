@@ -6,9 +6,13 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, serif;
   background: rgb(240, 240, 240);
   color: black;
+}
+
+* {
+  font-family: Georgia, serif;
 }
 
 .accent {
@@ -52,7 +56,7 @@ p, .row {
 
 textarea {
   resize: vertical;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, serif;
 }
 
 code {
@@ -117,7 +121,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .content {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, serif;
   font-size: 14px;
   border: 1px solid #bfbfbf;
   border-radius: 10px;
@@ -162,7 +166,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 
 .mce-title {
   font-weight: normal;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, serif;
 }
 
 .red {
@@ -259,7 +263,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 textarea {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, serif;
   font-size: 14px;
 }
 
@@ -272,6 +276,9 @@ textarea {
   display: none;
 }
 
+* {
+  font-family: Georgia, serif !important;
+}
 /* Media queries */
 @media screen and (max-width: 993px) {
     #right {
