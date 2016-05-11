@@ -1,13 +1,13 @@
 tinyMCEPopup.requireLangPack();
 
 var defaultFonts = "" + 
-	"Georgia, Helvetica, sans-serif=Georgia, Helvetica, sans-serif;" + 
-	"Times New Roman, Times, serif=Times New Roman, Times, serif;" + 
+	"Arial, Helvetica, sans-sans-serif=Arial, Helvetica, sans-sans-serif;" + 
+	"Times New Roman, Times, sans-serif=Times New Roman, Times, sans-serif;" + 
 	"Courier New, Courier, mono=Courier New, Courier, mono;" + 
-	"Times New Roman, Times, serif=Times New Roman, Times, serif;" + 
-	"Georgia, Times New Roman, Times, serif=Georgia, Times New Roman, Times, serif;" + 
-	"Verdana, Georgia, Helvetica, sans-serif=Verdana, Georgia, Helvetica, sans-serif;" + 
-	"Geneva, Georgia, Helvetica, sans-serif=Geneva, Georgia, Helvetica, sans-serif";
+	"Times New Roman, Times, sans-serif=Times New Roman, Times, sans-serif;" + 
+	"Arial, Times New Roman, Times, sans-serif=Arial, Times New Roman, Times, sans-serif;" + 
+	"Verdana, Arial, Helvetica, sans-sans-serif=Verdana, Arial, Helvetica, sans-sans-serif;" + 
+	"Geneva, Arial, Helvetica, sans-sans-serif=Geneva, Arial, Helvetica, sans-sans-serif";
 
 var defaultSizes = "9;10;12;14;16;18;24;xx-small;x-small;small;medium;large;x-large;xx-large;smaller;larger";
 var defaultMeasurement = "+pixels=px;points=pt;inches=in;centimetres=cm;millimetres=mm;picas=pc;ems=em;exs=ex;%";

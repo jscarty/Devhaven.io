@@ -6,7 +6,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Georgia, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-sans-serif;
   background: rgb(240, 240, 240);
   color: black;
 }
@@ -58,7 +58,7 @@ p, .row {
 
 textarea {
   resize: vertical;
-  font-family: Georgia, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-sans-serif;
 }
 
 code {
@@ -71,7 +71,7 @@ code {
   border: 0px;
   font-size: 13px;
   font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 
-  'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+  'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-sans-serif;
   white-space: pre-wrap;
   background: rgba(202, 202, 202, .5);
   color: black;
@@ -123,7 +123,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .content {
-  font-family: Georgia, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-sans-serif;
   font-size: 14px;
   border: 1px solid #bfbfbf;
   border-radius: 10px;
@@ -176,7 +176,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 
 .mce-title {
   font-weight: normal;
-  font-family: Georgia, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-sans-serif;
 }
 
 .red {
@@ -273,7 +273,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 textarea {
-  font-family: Georgia, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-sans-serif;
   font-size: 14px;
 }
 
