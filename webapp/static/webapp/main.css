@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: rgb(240, 240, 240);
+  background: white;
   color: black;
 }
 
@@ -16,8 +16,8 @@ html, body {
 }
 
 .accent {
-  background: #248f24;
-  height: 3px;
+  background: #ff3333;
+  height: 0px;
   width: 100%;
 }
 
@@ -124,7 +124,7 @@ input[type='text'], input[type='email'], input[type='password'] {
   font-family: Arial, sans-serif;
   font-size: 14px;
   border: 1px solid #bfbfbf;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 17px;
   background-color: white;
 }
@@ -138,20 +138,43 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .navbar {
-  background-color: white;
+  background-color: #262626;
+  border: 0;
+  border-radius: 0;
+
 }
 
-
 .navbar-default .navbar-nav > li > a {
-    color: black;
+    color: #e6e6e6;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-    color: black;
+    color: #e6e6e6;
 }
 
+.navbar-default .navbar-nav > li > a:active {
+    color: #e6e6e6;
+}
+
+.navbar-default .navbar-nav > li > a:visited {
+    color: #e6e6e6;
+}
+
+
 .navbar-default .navbar-brand {
-    color: #1a1a1a;
+    color: #e6e6e6;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #e6e6e6;
+}
+
+.navbar-default .navbar-brand:active {
+    color: #e6e6e6;
+}
+
+.navbar-default .navbar-brand:visited {
+    color: #e6e6e6;
 }
 
 .author a, .link {
