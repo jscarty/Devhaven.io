@@ -214,10 +214,6 @@ input[type='text'], input[type='email'], input[type='password'] {
   color: #ff3333;
 }
 
-.right {
-  float: right;
-}
-
 .overflow {
   overflow: auto;
 }
@@ -298,6 +294,10 @@ textarea {
 .whitespace {
   height: 15px;
   display: none;
+}
+
+.whitespace2 {
+  height: 5px;
 }
 
 * {

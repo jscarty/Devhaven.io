@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^logout/$', views.Logout, name='logout'),
     url(r'^startthread/$', views.add_post, name='startthread'),
     url(r'^threadfeed/$', views.post_list, name='threadfeed'),
+    url(r'^donate/$', views.donate, name='donate'),
     url(r'^thread/(?P<slug>[-\w]+)/$', views.view_post, name='blog_post_detail'),
     url(r'^thread/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^thread/(?P<pk>\d+)/delete/$', views.delete_new, name='delete_new'),
