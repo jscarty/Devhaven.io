@@ -313,9 +313,3 @@ textarea {
       display: block;
     }
 }
-
-@media screen and (max-width: 530px) {
-    .form-register {
-        width: 100%;
-    }
-}
