@@ -163,6 +163,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 
 .navbar-default .navbar-brand {
     color: #e6e6e6;
+    font-weight: normal;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -310,5 +311,11 @@ textarea {
 
     .whitespace {
       display: block;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .form-register {
+        width: 100%;
     }
 }
