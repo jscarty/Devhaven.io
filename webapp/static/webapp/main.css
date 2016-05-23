@@ -39,8 +39,8 @@ h4 {
 }
 
 hr {
-  background-color: gray;
-  height: 0px;
+  background-color: rgb(220, 220, 220);
+  height: 1px;
 }
 
 input, textarea, select {
