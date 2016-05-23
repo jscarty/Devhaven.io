@@ -352,7 +352,7 @@ textarea {
     transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     color: white;
-    font-size: 110%;
+    font-size: 23px;
     font-family: "Montserrat";
     width: 70%;
 }
@@ -501,5 +501,17 @@ input:-webkit-autofill:focus {
 
     .in-center {
       padding-top: 50px;
+    }
+
+    .content {
+      border: 0;
+    }
+
+    .content[style] {
+      border: 0;
+    }
+
+    #aboutcontainer {
+      font-size: 110%;
     }
 }
