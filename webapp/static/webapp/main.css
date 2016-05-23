@@ -16,7 +16,11 @@ html, body {
   width: 100%;
 }
 
-@font-face { font-family: 'Arial'; src: Raleway, Arial, sans-serif; }
+* {
+  letter-spacing: 0.5px;
+}
+
+@font-face { font-family: 'Arial'; src: Arial, Arial, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
@@ -118,7 +122,7 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .content {
-  font-family: Raleway, Arial, sans-serif;
+  font-family: Arial, Arial, sans-serif;
   font-size: 14px;
   border: 1px solid #bfbfbf;
   border-radius: 5px;
@@ -143,7 +147,7 @@ input[type='text'], input[type='email'], input[type='password'] {
   border: 0;
   border-radius: 0;
   font-size: 15px;
-  font-family: "Montserrat", Arial;
+  font-family: "Arial", Arial;
   z-index: 99;
 }
 
@@ -334,7 +338,7 @@ textarea {
     transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     color: white;
-    font-family: "Montserrat", Arial;
+    font-family: "Arial", Arial;
 }
 
 .in-center h1 {
@@ -353,7 +357,7 @@ textarea {
     -ms-transform: translateX(-50%) translateY(-50%);
     color: white;
     font-size: 23px;
-    font-family: "Montserrat";
+    font-family: "Arial";
     width: 70%;
 }
 
@@ -400,7 +404,7 @@ textarea {
     -ms-transform: translateX(-50%) translateY(-50%);
     color: white;
     font-size: 23px;
-    font-family: "Montserrat";
+    font-family: "Arial";
 }
 
 .paypalbutton {
@@ -433,25 +437,25 @@ textarea {
 }
 
 span[style] {
-  font-family: Raleway, Arial !important;
+  font-family: Arial, Arial !important;
 }
 
 font[style] {
-  font-family: Raleway, Arial !important;
+  font-family: Arial, Arial !important;
 }
 
 font[face] {
-  font-family: Raleway, Arial !important;
+  font-family: Arial, Arial !important;
 }
 
 .title-div {
   padding-top: 3px;
   padding-bottom: 15px;
-  font-family: "Montserrat", Arial;
+  font-family: "Arial", Arial;
 }
 
 .description-div {
-  font-family: "Raleway", Arial;
+  font-family: "Arial", Arial;
   padding-bottom: 22px;
 }
 
@@ -469,12 +473,12 @@ font[face] {
   border: 0;
 }
 
-.montserrat {
-  font-family: "Montserrat", Arial;
+.Arial {
+  font-family: "Arial", Arial;
 }
 
-.raleway {
-  font-family: "Raleway", Arial;
+.Arial {
+  font-family: "Arial", Arial;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -521,6 +525,6 @@ input:-webkit-autofill:focus {
       transform: translateX(-50%) translateY(-50%);
       -ms-transform: translateX(-50%) translateY(-50%);
       color: white;
-      font-family: "Montserrat", Arial;      
+      font-family: "Arial", Arial;      
     }
 }
