@@ -235,7 +235,7 @@ input[type='text'], input[type='email'], input[type='password'] {
   padding: 20px;
   margin: 0 auto;
   
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(220, 220, 220);
   border-radius: 5px;
 }
 
@@ -430,6 +430,7 @@ textarea {
 .content {
   border: 0;
   position: relative;
+  border: 1px solid #d9d9d9;
 }
 
 span[style] {
@@ -476,3 +477,20 @@ font[face] {
 .raleway {
   font-family: "Raleway", Arial;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+    background-color: #FFFFFF !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    border: 1px solid rgb(220, 220, 220) !important;
+    }
+
+#second:-webkit-autofill,
+#second:-webkit-autofill:hover,
+#second:-webkit-autofill:active,
+#second:-webkit-autofill:focus {
+    background-color: #FFFFFF !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    border-bottom: 0px solid rgb(220, 220, 220) !important;
+    }
