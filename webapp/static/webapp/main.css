@@ -425,6 +425,7 @@ textarea {
 
 .content {
   border: 0;
+  position: relative;
 }
 
 span[style] {
