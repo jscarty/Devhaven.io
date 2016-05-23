@@ -352,7 +352,7 @@ textarea {
     transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     color: white;
-    font-size: 23px;
+    font-size: 120%;
     font-family: "Montserrat";
     width: 70%;
 }
@@ -366,7 +366,6 @@ textarea {
   color: #fff;
   position: relative;
   top: 100%;
-  font-size: 105%;
   height: 70%;
 }
 
@@ -378,7 +377,7 @@ textarea {
 
 #bg {
   position: fixed; 
-  top: 1px; 
+  top: 50px; 
   left: 0; 
 
   width: 100%;
@@ -494,3 +493,9 @@ input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 1000px white inset !important;
     border-bottom: 0px solid rgb(220, 220, 220) !important;
     }
+
+@media screen and (max-width: 1015px) {
+    #bg {
+      display: none;
+    }
+}
