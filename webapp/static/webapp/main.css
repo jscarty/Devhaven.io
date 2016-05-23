@@ -499,14 +499,6 @@ input:-webkit-autofill:focus {
       display: none;
     }
 
-    .in-center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      -ms-transform: translateX(-50%) translateY(-50%);
-    }
-
     .content {
       border: 0;
     }
@@ -517,5 +509,18 @@ input:-webkit-autofill:focus {
 
     #aboutcontainer {
       font-size: 110%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .in-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: 200px;
+      transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+      color: white;
+      font-family: "Montserrat", Arial;      
     }
 }
