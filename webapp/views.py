@@ -76,7 +76,7 @@ def register(request):
 
 def login(request):
     next = request.GET.get('next', '/')
-    instruction = "Sign in using your valid username and password."
+    instruction = "Sign in using your valid username and password (case-sensitive)"
 
     if request.method == "POST":
         username = request.POST['username']
