@@ -372,6 +372,8 @@ textarea {
   position: relative;
   top: 100%;
   height: 91%;
+  overflow: auto;
+  min-height: 600px;
 }
 
 #donate {
@@ -395,6 +397,8 @@ textarea {
 #donate {
   height: 40%;
   color: white;
+  overflow: auto;
+  min-height: 300px;
 }
 
 #donatecontainer {
