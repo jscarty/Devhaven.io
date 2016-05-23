@@ -5,7 +5,7 @@
   tinymce.init({ selector:'textarea',
   plugins: "codesample link",
   toolbar: "styleselect | undo redo | removeformat | bold italic underline |  aligncenter alignjustify  | bullist numlist outdent indent | link | fontsizeselect | codesample",
-  content_css: "../../static/webapp/custom_content.css",
+  content_css: "../../static/webapp/custom_content.css,http://fonts.googleapis.com/css?family=Raleway",
   'paste_remove_spans': true,
   fontsize_formats: "13px 18px 21px",
   style_formats:
@@ -99,13 +99,12 @@
    ],
   setup : function(ed) {
      ed.on('init', function(ed) {
-      ed.target.editorCommands.execCommand("fontName", false, "Arial");
+      ed.target.editorCommands.execCommand("fontName", false, "Raleway");
       ed.target.editorCommands.execCommand("fontSize", false, "13px");
      });
     }
   });
 </script>
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -164,8 +163,9 @@
     <br>
         {% if request.user.is_authenticated %}
     <div class="content" style="position: relative;">
-        <h4 align="center" class="montserrat">Add Response</h4>
-        <p id="description">Before posting a new response, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <b>LaTeX</b> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p>
+        <div class="title-div"><h4 align="center" class="montserrat">Add Response</h4></div>
+        <div class="description-div">
+        <p id="description">Before posting a new response, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <b>LaTeX</b> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p></div>
         <form action="" method="POST" action="" class="form-horizontal">
             {% csrf_token %}
             <div class="form-group">
