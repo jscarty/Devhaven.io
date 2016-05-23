@@ -24,7 +24,6 @@ class Post(models.Model):
     title = models.TextField(max_length=150)
     slug = models.SlugField(max_length=255)
     text = models.TextField()
-    views = 0
     created_on = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey('auth.User', null=True, blank=True)
     commentCount = 0
@@ -68,10 +67,6 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
-
-class PostCountHitDetailView(HitCountDetailView):
-    modal = Post        # your model goes here
-    count_hit = True    # set to True if you want it to try and count the hit
 
 class Comment(models.Model):
     name = models.ForeignKey('auth.User', null=True, blank=True)

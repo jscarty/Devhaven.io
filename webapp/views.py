@@ -182,10 +182,7 @@ def view_post(request, slug):
 
     hit_count = HitCount.objects.get_for_object(post)
     hit_count_response = HitCountMixin.hit_count(request, hit_count)
-
-    print("Post starting views: " + str(post.views))
-    post.views = post.views + 1
-    print("Post views now: " + str(post.views))
+    print(hit_count_response)
 	
     if form.is_valid() and request.user.is_authenticated():
         comment = form.save(commit=False)
