@@ -15,6 +15,8 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.core.urlresolvers import reverse
 from django.utils import timezone
+from hitcount.models import HitCount
+from hitcount.views import HitCountMixin
 import operator
 
 posts = Post.objects.all().filter().order_by('-created_on')
@@ -177,6 +179,9 @@ def delete_response(request, pk):
 def view_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
     form = CommentForm(request.POST or None)
+
+    hit_count = HitCount.objects.get_for_object(post)
+    hit_count_response = HitCountMixin.hit_count(request, hit_count)
 
     print("Post starting views: " + str(post.views))
     post.views = post.views + 1
