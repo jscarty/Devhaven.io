@@ -33,12 +33,18 @@
   <div class="content" id="threadfeed">
     <p></p>
 {% for post in posts %}
-    <div>
+    <div class="postdiv">
         <p><a href="../thread/{{ post.slug }}"><u>{{ post.title }}</u></a></p>
-        <p align="right">Written by <span class="green"><b>{{ post.author }}</b></span> on {{ post.created_on }}</p>
+        <p align="right">Written by <b><i>{{ post.author }}</i></b> on {{ post.created_on }}</p>
         <p align="right">Posted in <span class="green"><b>{{ post.field }}</b></span></p>
+        {% if post.commentCount > 0 %}
+          <p align="right">Responses: <span class="green"><b>{{ post.commentCount }}</b></span></p>
+        {% endif %}
+        {% if post.commentCount == 0 %}
+          <p align="right">Reponses: <span class="red"><b>{{ post.commentCount }}</b></span></p>
+        {% endif %}
+        <br>
     </div>
-    <br>
 {% endfor %}
   </div>
 </div>

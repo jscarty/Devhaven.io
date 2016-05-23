@@ -15,8 +15,10 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.core.urlresolvers import reverse
 from django.utils import timezone
+import operator
 
 posts = Post.objects.all().filter().order_by('-created_on')
+postRequests = 0
 
 def index(request):
     title = "Devhaven.io"
@@ -175,6 +177,10 @@ def delete_response(request, pk):
 def view_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
     form = CommentForm(request.POST or None)
+
+    print("Post starting views: " + str(post.views))
+    post.views = post.views + 1
+    print("Post views now: " + str(post.views))
 	
     if form.is_valid() and request.user.is_authenticated():
         comment = form.save(commit=False)
@@ -200,8 +206,21 @@ def view_post(request, slug):
 
 def post_list(request):
     global posts
+    global postRequests
+
     posts = Post.objects.all().filter().order_by('-created_on') # Use filter on the QuerySet to sort by time
     context = {'posts' : posts, 'authenticated': request.user.is_authenticated()}
+
+    numComments = 0
+
+    for post in posts:
+        numComments = 0
+
+        for comment in post.comment_set.all():
+            numComments = numComments + 1
+
+        post.commentCount = numComments
+
     return render(request, 'webapp/threadfeed.html', context)
 
 def donate(request):

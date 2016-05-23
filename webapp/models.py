@@ -2,6 +2,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 from django.contrib import auth
+from hitcount.views import HitCountDetailView
 import sys
 
 # Create your models here.
@@ -23,10 +24,8 @@ class Post(models.Model):
     title = models.TextField(max_length=150)
     slug = models.SlugField(max_length=255)
     text = models.TextField()
+    views = 0
     created_on = models.DateTimeField(auto_now_add=True)
-    up_vote = 0 # num of up votes
-    down_vote = 0 #num of down votes
-    vote_total = up_vote - down_vote
     author = models.ForeignKey('auth.User', null=True, blank=True)
     commentCount = 0
 
@@ -69,6 +68,10 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
+
+class PostCountHitDetailView(HitCountDetailView):
+    modal = Post        # your model goes here
+    count_hit = True    # set to True if you want it to try and count the hit
 
 class Comment(models.Model):
     name = models.ForeignKey('auth.User', null=True, blank=True)

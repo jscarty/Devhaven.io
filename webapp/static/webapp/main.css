@@ -300,6 +300,15 @@ textarea {
   height: 5px;
 }
 
+#search-button, #search-input, #search-category {
+  font-size: 13px;
+  height: 30px;
+}
+
+.postdiv {
+  line-height: 97%;
+}
+
 * {
   font-family: Arial, sans-serif;
 }
