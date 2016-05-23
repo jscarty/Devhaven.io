@@ -8,11 +8,10 @@
     </div>
     <ul class="nav navbar-nav">
 		<li><a href="../threadfeed">Threads</a></li>
-		<li><a href="../startthread">Start Thread</a></li>
 	    {% if authenticated %}
+	    	<li><a href="../startthread">Start Thread</a></li>
 			<li><a href="../yourfeed">Your Threads</a></li>
 	    {% endif %}
-	    <li><a href="../../../donate">Donate</a></li>
     </ul>
     {% if not authenticated %}
       <ul class="nav navbar-nav navbar-right">
@@ -28,17 +27,25 @@
   </div>
 </nav>
 
+<img src="../../static/webapp/clouds.png" id="bg" alt="">
+
 <!--<div class="content">-->
 <div class="container" id="vertical-center">
 	<div class="wrapper">
 		{% if displaySignUp %}  
-		<form class="form-register" method='POST' action='' autocomplete="off" role="form"> {% csrf_token %}   
-				<h1 align="center"> {{ title }} </h1>
-				<p align="center" class="contained-p">{{ instruction | safe }}</p>
+		<form class="form-register" method='POST' action='' autocomplete="off" role="form"> {% csrf_token %}  
+			<div class="title-div-2"> 
+				<h1 align="center" class="montserrat"> {{ title }} </h1>
+				<div class="raleway">
+					<p align="center" class="contained-p">{{ instruction | safe }}</p>
+			    </div>
+      		</div>
+      		<div class="raleway">
 				<input id="first" type="text" class="form-control" name="username" placeholder="Username" required="true" pattern=".{7,}" title="The username must be at least 7 characters in length." autofocus="" />
 				<input id="second" type="email" class="form-control" name="email" placeholder="Email" required="true" autocomplete="off" /> 
-				<input id="third" type="password" class="form-control" name="password" placeholder="Password" pattern=".{5,}" required="true" title="The password must be at least 12 characters in length."/>
-				<button class="btn btn-primary btn-sm" type="submit" id="sign-up">Sign Up</button>   
+				<input id="third" type="password" class="form-control" name="password" placeholder="Password" pattern=".{5,}" required="true" title="The password must be at least 12 characters in length."/><div style="height:10px;"></div>
+				<div style="position: relative;"><button class="btn btn-primary btn-sm" type="submit" id="sign-up">Sign Up</button></div>
+			</div>  
 		</form>
 		{% endif %}
 	</div>

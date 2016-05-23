@@ -113,11 +113,10 @@
     </div>
     <ul class="nav navbar-nav">
 		<li><a href="../../../threadfeed">Threads</a></li>
-		<li><a href="../../../startthread">Start Thread</a></li>
       {% if authenticated %}
+        <li><a href="../../../startthread">Start Thread</a></li>
         <li><a href="../../../yourfeed">Your Threads</a></li>
       {% endif %}
-      <li><a href="../../../donate">Donate</a></li>
     </ul>
     {% if not authenticated %}
       <ul class="nav navbar-nav navbar-right">
@@ -133,11 +132,13 @@
   </div>
 </nav>
 
+<img src="../../../static/webapp/clouds.png" id="bg" alt="">
+
 <div class="container">
   <div class="content">
-  	<h1 align="center">Modify an existing discussion.</h1>
+  	<h1 align="center" class="montserrat">Modify an existing discussion.</h1>
     
-    <p id="description">Before editing a thread, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <code class="code">LaTeX</code> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p>
+    <p id="description">Before editing a thread, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <b>LaTeX</b> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p>
 
       <form action="" class='form-horizontal' method="POST" action="">
         {% csrf_token %}

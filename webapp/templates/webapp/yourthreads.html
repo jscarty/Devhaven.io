@@ -9,11 +9,10 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="../threadfeed">Threads</a></li>
-      <li><a href="../startthread">Start Thread</a></li>
       {% if authenticated %}
+        <li><a href="../startthread">Start Thread</a></li>
         <li><a href="../yourfeed">Your Threads</a></li>
       {% endif %}
-      <li><a href="../../../donate">Donate</a></li>
     </ul>
     {% if not authenticated %}
       <ul class="nav navbar-nav navbar-right">
@@ -29,11 +28,14 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="content" id="threadfeed">
+<img src="../../static/webapp/clouds.png" id="bg" alt="">
+
+<div class="container" style="height: 100%;">
+  <div class="content" id="threadfeed" style="min-height: 100%;">
     <p></p>
 {% for post in posts %}
-    <div class="postdiv">
+  <div class="raleway">
+    <div class="postdiv" style="position:relative;">
         <p><a href="../thread/{{ post.slug }}"><u>{{ post.title }}</u></a></p>
         <p align="right">Written on {{ post.created_on }}</p>
         <p align="right">Posted in <span class="green"><b>{{ post.field }}</b></span></p>
@@ -45,6 +47,7 @@
         {% endif %}
         <br>
     </div>
+  </div>
 {% endfor %}
   </div>
 </div>

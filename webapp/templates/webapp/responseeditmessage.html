@@ -8,11 +8,10 @@
     </div>
     <ul class="nav navbar-nav">
 		  <li><a href="../../../threadfeed">Threads</a></li>
-      <li><a href="../../../startthread">Start Thread</a></li>
       {% if authenticated %}
+        <li><a href="../../../startthread">Start Thread</a></li>
         <li><a href="../../../yourfeed">Your Threads</a></li>
       {% endif %}
-      <li><a href="../../../donate">Donate</a></li>
     </ul>
     {% if not authenticated %}
       <ul class="nav navbar-nav navbar-right">
@@ -27,9 +26,9 @@
     {% endif %}
   </div>
 </nav>
-
+<img src="../../../static/webapp/clouds.png" id="bg" alt="">
 <!--<div class="content">-->
-<div class="container">
+<div class="container" style="position: relative;">
   <div class="content">
     Your response has been successfully edited :D.
   </div>

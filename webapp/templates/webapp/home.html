@@ -9,11 +9,10 @@
     </div>
     <ul class="nav navbar-nav">
 		<li><a href="threadfeed">Threads</a></li>
-		<li><a href="startthread">Start Thread</a></li>
     {% if authenticated %}
+    <li><a href="startthread">Start Thread</a></li>
 		<li><a href="yourfeed">Your Threads</a></li>
     {% endif %}
-    <li><a href="../../../donate">Donate</a></li>
     </ul>
     {% if not authenticated %}
       <ul class="nav navbar-nav navbar-right">
@@ -29,50 +28,23 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="content">
-  	<h1 align="center">{{template_title}}</h1>
-    {% if not authenticated %}
-      <p align="center">Simple and quick programming discussion.</p>
-    {% endif %}
-  	<br>
-      <div class="row">
-          <div class="col-md-6" id="left">
-              <div align="center"><i>What <b>Devhaven.io</b> is</i></div><br>
-              Devhaven.io is a newly launched programming discussion forum created for programming enthusiasts. Registration is free, and members have full access to all of the programming threads of this site. All programming topics are allowed for discussion, from operating Systems to Web Development. In addition, Devhaven.io has advanced formatting and syntax highlighting inside its text editor for creating threads and responses, making discussion quick and easy.
-          </div>
-          <div class="whitespace"></div>
-          <div class="col-md-6" id="right">
-  			<div align="center"><i>Recent Updates</i></div>
-        <br>
-        <div class="update">
-          <b>5.18.2016</b>: <a href="http://www.devhaven.io/"><b>Dehvaven.io</b></a> now has its own domain (without the .herokuapp subdomain).
-        </div>
-        <br>
-        <div class="update">
-          <b>5.1.2016</b>: Responses can now be edited.
-        </div>
-        <br>
-        <div class="update">
-          <b>4.26.2016</b>: Updated Heroku dyno to never sleep
-        </div>
-        <br>
-        <div class="update">
-          <b>4.24.2016</b>: Updated responsive design layout.
-        </div>
-        <br>
-        <div class="update">
-          <b>4.24.2016</b>: Upgraded <i>sqlite3</i> server to <i>postgresql</i> server on Heroku for persistent data storage.
-        </div>
-        <br>
-        <div class="update">
-          <b>4.21.2016</b>: Fixed a bug where "Community Discussion" wasn't recognized as a thread topic.
-        </div>
-        <br>
-          </div>
-      </div>
-      <br>
+<div class="in-center"><h1 align="center">Devhaven.io</h1>Simple and quick <u>programming discussion</u>.</div>
+<img src="../../static/webapp/clouds.png" id="bg" alt="">
+
+<div id="about">
+<div id="aboutcontainer">
+<i>Devhaven.io</i> is a newly launched programming discussion forum created for programming enthusiasts. Registration is free, and members have full access to all of the programming threads of this site. All programming topics are allowed for discussion, from operating Systems to Web Development. In addition, Devhaven.io has advanced formatting and syntax highlighting inside its text editor for creating threads and responses, making discussion quick and easy.<br><br><div style="font-size: 80%;">
+- Made by Henry Zhu (Back End) and Owen Cheung (Front End)</div></div></div>
+<div id="donate">
+  <div id="donatecontainer">Donations are appreciated.
+    <div align="center">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="RWMZCW52FTXMJ">
+        <input type="submit" value="Donate to us" name="submit" title="PayPal - The safer, easier way to pay online!" class="paypalbutton">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
     </div>
-    <br>
+  </div>
 </div>
 {% endblock %}

@@ -225,9 +225,6 @@ def post_list(request):
 
     return render(request, 'webapp/threadfeed.html', context)
 
-def donate(request):
-    return render(request, 'webapp/donate.html', {'authenticated': request.user.is_authenticated()})
-
 def your_post(request):
     posts2 = Post.objects.filter(author__username=str(request.user))
 

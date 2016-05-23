@@ -113,11 +113,10 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="../../threadfeed">Threads</a></li>
-      <li><a href="../../startthread">Start Thread</a></li>
       {% if authenticated %}
+        <li><a href="../../startthread">Start Thread</a></li>
         <li><a href="../../yourfeed">Your Threads</a></li>
       {% endif %}
-      <li><a href="../../../donate">Donate</a></li>
     </ul>
     {% if not authenticated %}
       <ul class="nav navbar-nav navbar-right">
@@ -133,9 +132,10 @@
   </div>
 </nav>
 
+<img src="../../static/webapp/clouds.png" id="bg" alt="">
 
 <div class="container">
-    <div class="content">
+    <div class="content" style="position: relative;">
         <h2 class="overflow">{{ post.title }}</h2>
         <hr>
         <div class="over">
@@ -162,30 +162,10 @@
         </p>
     </div>
     <br>
-    {% if post.comment_set.all %}
-    <div class="comments">
-        {% for comment in post.comment_set.all %}
-            <div class="content">
-              <p>
-                  {{ comment.text | safe }}
-              </p>
-              <p align="right">
-                  <a href="{{ comment.website }}" class="link">{{ comment.name }}</a> said on {{ comment.created_on }}<br>
-                  {% if comment.name == request.user or request.user.username == "henrydavidzhu" %}
-                     <a href="{% url 'response_edit' pk=comment.pk %}" class="link">Edit</a> or <a href="{% url 'delete_response' pk=comment.pk %}" class="link">Delete</a> this response<br>
-                  {% endif %}
-              </p>
-            </div>
-            <br>
-        {% endfor %}
-    </div>
-    {% endif %}
-    <br>
-
-    {% if request.user.is_authenticated %}
-    <div class="content">
+        {% if request.user.is_authenticated %}
+    <div class="content" style="position: relative;">
         <h4 align="center">Add Response</h4>
-        <p id="description">Before posting a new response, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <code class="code">LaTeX</code> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p>
+        <p id="description">Before posting a new response, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <b>LaTeX</b> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p>
         <form action="" method="POST" action="" class="form-horizontal">
             {% csrf_token %}
             <div class="form-group">
@@ -206,6 +186,28 @@
     {% if not request.user.is_authenticated %}
     <div class="content" style="font-size: 13px;">
       You must be a regsistered user to post responses.
+    </div>
+    {% endif %}
+    <br>
+
+    {% if post.comment_set.all %}
+    <div class="comments" style="position: relative;">
+      <div class="content">
+        {% for comment in post.comment_set.all %}
+            
+              <p>
+                  {{ comment.text | safe }}
+              </p>
+              <p align="right">
+                  <a href="{{ comment.website }}" class="link">{{ comment.name }}</a> said on {{ comment.created_on }}<br>
+                  {% if comment.name == request.user or request.user.username == "henrydavidzhu" %}
+                     <a href="{% url 'response_edit' pk=comment.pk %}" class="link">Edit</a> or <a href="{% url 'delete_response' pk=comment.pk %}" class="link">Delete</a> this response<br>
+                  {% endif %}
+              </p>
+              <hr>
+            <br>
+        {% endfor %}
+      </div>
     </div>
     {% endif %}
     <br>
