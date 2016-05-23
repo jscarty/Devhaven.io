@@ -533,4 +533,8 @@ input:-webkit-autofill:focus {
       color: white;
       font-family: "Arial", Arial;      
     }
+
+    .in-center h1 {
+      font-size: 32px;
+    }
 }
