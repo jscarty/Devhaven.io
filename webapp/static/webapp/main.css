@@ -152,6 +152,10 @@ input[type='text'], input[type='email'], input[type='password'] {
     color: #ffffff;
 }
 
+.navbar-default .navbar-nav > li > a:link {
+    color: #ffffff;
+}
+
 .navbar-default .navbar-nav > li > a:hover {
     color: #ffffff;
 }
@@ -161,6 +165,26 @@ input[type='text'], input[type='email'], input[type='password'] {
 }
 
 .navbar-default .navbar-nav > li > a:visited {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav .navbar-right > li > a {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav .navbar-right > li > a:link {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav .navbar-right > li > a:hover {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav .navbar-right > li > a:active {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav .navbar-right > li > a:visited {
     color: #ffffff;
 }
 
