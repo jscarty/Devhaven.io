@@ -133,6 +133,7 @@
 
 <img src="../../../static/webapp/clouds.png" id="bg" alt="">
 
+{% if post.author == request.user or request.user.username == "henrydavidzhu" %}
 <div class="container">
   <div class="content">
     <div class="title-div">
@@ -197,6 +198,15 @@
       </form>
   </div>
 </div>
+{% endif %}
+
+{% if post.author != request.user and request.user.username != "henrydavidzhu" %}
+<div class="container">
+  <div class="content">
+    Nice try, but you are prohibited from editing other people's posts!
+  </div>
+</div>
+{% endif %}
 
 <script>
 $('#id_title').val( $('#id_title').val() + "{{ post.title }}" )
