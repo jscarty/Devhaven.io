@@ -134,7 +134,6 @@
 
 <img src="../../../static/webapp/clouds.png" id="bg" alt="">
 
-{% if comment.author == request.user or request.user.username == "henrydavidzhu" %}
 <div class="container">
     <div class="content">
         <div class="title-div"><h4 align="center" class="montserrat">Modify an Existing Response</h4></div>
@@ -156,14 +155,5 @@
         </form>
     </div>
 </div>
-{% endif %}
-
-{% if comment.author != request.user and request.user.username != "henrydavidzhu" %}
-<div class="container">
-  <div class="content">
-    Nice try, but you are prohibited from editing other people's responses!
-  </div>
-</div>
-{% endif %}
 
 {% endblock %}
