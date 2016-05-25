@@ -16,10 +16,6 @@ body {
 * {
     letter-spacing: 0.5px;
 }
-@font-face {
-    font-family: 'Arial';
-    src: Arial, Arial, sans-serif;
-}
 h1,
 h2,
 h3,
