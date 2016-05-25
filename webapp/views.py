@@ -228,8 +228,6 @@ def post_list(request):
 def your_post(request):
     posts2 = Post.objects.filter(author__username=str(request.user))
 
-    numComments = 0
-
     for post in posts2:
         numComments = 0
 
@@ -237,8 +235,5 @@ def your_post(request):
             numComments = numComments + 1
 
         post.commentCount = numComments
-
-
-    print("Number of comments: " + str(numComments))
 
     return render(request, 'webapp/yourthreads.html', {'authenticated': request.user.is_authenticated(), 'posts':posts2})
