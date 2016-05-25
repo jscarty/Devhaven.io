@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^register/$', views.register, name='register'),
     url(r'^login/$', views.login, name='login'),
-    url(r'^logout/$', views.Logout, name='logout'),
+    url(r'^logout/$', views.logout, name='logout'),
     url(r'^startthread/$', views.add_post, name='startthread'),
     url(r'^threadfeed/$', views.post_list, name='threadfeed'),
     url(r'^thread/(?P<slug>[-\w]+)/$', views.view_post, name='blog_post_detail'),

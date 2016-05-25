@@ -1,5 +1,4 @@
-# TODO: Make sure to create an HTTPResponseRedirect to ("/register-success/")
-
+# Import all the models and libraries we need
 from django.shortcuts import render, redirect, render_to_response, get_object_or_404
 from .forms import UserForm
 from django.contrib.auth import authenticate, login
@@ -19,38 +18,37 @@ from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
 import operator
 
-posts = Post.objects.all().filter().order_by('-created_on')
-postRequests = 0
+posts = Post.objects.all().filter().order_by('-created_on') # Get all the posts on Devhaven.io
 
 def index(request):
-    title = "Devhaven.io"
+    title = "Devhaven.io" # The display message when the user isn't logged in
 
     if (request.user.is_authenticated()): # If the user is logged-in, display Welcome Back!
         title = "Welcome back {0}.".format(request.user)
 
     context = {
-        "template_title": title,
-        "authenticated": request.user.is_authenticated()
+        "template_title": title, # Pass in the title of the web page
+        "authenticated": request.user.is_authenticated() # Pass in whether the user is authenticated or not
     } 
 
     return render(request, 'webapp/home.html', context)
 
 def register(request):
-    form = UserForm(request.POST or None)
-    title = "Registration is quick and easy."
-    instruction = "The <b>email*</b> is required but only the username is displayed.<br>As a matter of policy, we allow multiple accounts per user."
-    displaySignUp = True
+    form = UserForm(request.POST or None) # Registration form
+    title = "Registration is quick and easy." # Title
+    instruction = "The <b>email*</b> is required but only the username is displayed.<br>As a matter of policy, we allow multiple accounts per user." #Instruction towards user
+    displaySignUp = True # Only display the sign up if the user hasn't finished registering yet
 
     context = {
         "title": title,
         "form": form,
         "instruction": instruction,
         "displaySignUp": displaySignUp,
-        "authenticated": request.user.is_authenticated()
+        "authenticated": request.user.is_authenticated() # Whether the user is authenticated or not
     }
 
     if form.is_valid():
-        instruction = """We're excited to have you as a new user."""
+        instruction = """We're excited to have you as a new user.""" # Welcome message when user has finished up the registration process
 
         context = {
             "title" : "Welcome to the community!",
@@ -61,13 +59,13 @@ def register(request):
         }
 
         try:
-            user = User.objects.create_user(form.cleaned_data.get('username'), form.cleaned_data.get('email'), form.cleaned_data.get('password'))
+            user = User.objects.create_user(form.cleaned_data.get('username'), form.cleaned_data.get('email'), form.cleaned_data.get('password')) # If the user is valid, save the user into the database
             user.save()
         except IntegrityError as e:
             context = {
                 "title" : title,
                 "form": form,
-                "instruction": "We're sorry, but that user is already registered.",
+                "instruction": "We're sorry, but that user is already registered.", # When the username is already taken
                 "displaySignUp" : True,
                 "authenticated": request.user.is_authenticated()
             }            
@@ -75,22 +73,22 @@ def register(request):
     return render(request, 'webapp/register.html', context)
 
 def login(request):
-    next = request.GET.get('next', '/')
+    next = request.GET.get('next', '/') # Direct the user to the home page after he / she logs in.
     instruction = "Sign in using your valid username and password (<b>case-sensitive</b>)."
 
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
+        username = request.POST['username'] # Get the username entered
+        password = request.POST['password'] # Get the password entered 
+        user = authenticate(username=username, password=password) # Get the user
 
-        if user is not None:
-            if user.is_active:
-                auth_login(request, user)
-                return HttpResponseRedirect(next)
+        if user is not None: # If user exists
+            if user.is_active: # If user is active
+                auth_login(request, user) # Log the user in
+                return HttpResponseRedirect(next) # REdirect the user to the main page
             else:
-                instruction = "This user is currently inactive."
+                instruction = "This user is currently inactive." # Display that the user is inactive
         else:
-            instruction = "Incorrect user and/or password combination."
+            instruction = "Incorrect user and/or password combination." # Displayt hat the user has entered incorrect data
 
     context = {
         'redirect_to': next,
@@ -100,16 +98,16 @@ def login(request):
     
     return render(request, "webapp/login.html", context)
 
-def Logout(request):
-    auth.logout(request)
+def logout(request):
+    auth.logout(request) # Log the user out
     return redirect('../login/')
 
 @user_passes_test(lambda u: u.is_authenticated)
 def add_post(request):
-    form = PostForm(request.POST or None)
+    form = PostForm(request.POST or None) # Form for posting threads
 
     if request.method == "POST":
-        if form.is_valid() and request.user.is_authenticated():
+        if form.is_valid() and request.user.is_authenticated(): # Check if the form is validated and the user has been authenticated
             try:
                 post = Post.objects.create(author=request.user, title=form.cleaned_data.get("title"), text=form.cleaned_data.get("text"), 
 				field = form.cleaned_data.get("field"))
@@ -208,7 +206,6 @@ def view_post(request, slug):
 
 def post_list(request):
     global posts
-    global postRequests
 
     posts = Post.objects.all().filter().order_by('-created_on') # Use filter on the QuerySet to sort by time
     context = {'posts' : posts, 'authenticated': request.user.is_authenticated()}
