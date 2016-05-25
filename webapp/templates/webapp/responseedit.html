@@ -134,11 +134,12 @@
 
 <img src="../../../static/webapp/clouds.png" id="bg" alt="">
 
+{% if comment.author == request.user or request.user.username == "henrydavidzhu" %}
 <div class="container">
     <div class="content">
         <div class="title-div"><h4 align="center" class="montserrat">Modify an Existing Response</h4></div>
         <div class="description-div">
-        <p id="description">Before editing a response, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <b>LaTeX</b> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p></div>
+        <p id="description">Before editing a response, please glance your reponse over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <b>LaTeX</b> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p></div>
         <form action="" method="POST" action="" class="form-horizontal">
             {% csrf_token %}
             <div class="form-group">
@@ -155,4 +156,14 @@
         </form>
     </div>
 </div>
+{% endif %}
+
+{% if comment.author != request.user and request.user.username != "henrydavidzhu" %}
+<div class="container">
+  <div class="content">
+    Nice try, but you are prohibited from editing other people's responses!
+  </div>
+</div>
+{% endif %}
+
 {% endblock %}
