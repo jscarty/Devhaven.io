@@ -407,12 +407,6 @@ textarea {
   min-height: 600px;
 }
 
-#donate {
-  position: relative;
-  top: 100%;
-  background: #1ac6ff;
-}
-
 #bg {
   position: fixed; 
   top: 50px; 
@@ -426,6 +420,9 @@ textarea {
 }
 
 #donate {
+  position: relative;
+  top: 100%;
+  background: #1ac6ff;
   height: 40%;
   overflow: auto;
   min-height: 300px;
