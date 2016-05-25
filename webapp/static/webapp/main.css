@@ -520,13 +520,22 @@ a:hover {
   color: #b3d1ff;
 }
 
-.Arial {
-  font-family: "Arial", Arial;
+.postlink:link {
+  color: #b3d1ff;
 }
 
-.Arial {
-  font-family: "Arial", Arial;
+.postlink:hover {
+  color: #b3d1ff;
 }
+
+.postlink:active {
+  color: #b3d1ff;
+}
+
+.postlink:visited {
+  color: #b3d1ff;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
