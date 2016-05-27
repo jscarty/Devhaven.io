@@ -134,6 +134,7 @@
 
 <img src="../../static/webapp/clouds.png" id="bg" alt="">
 
+{% if authenticated %}
 <!--<div class="content">-->
 <div class="container">
   <div class="content">
@@ -199,11 +200,16 @@
       </form>
     </div>
   {% endif %}
-  {% if not authenticated %}
-  <div style="height: 14px"></div>
-  <p class="raleway" align="center">You must be a registered user in order to start new discussion threads.</p>
-  {% endif %}
 </div>
 <br>
 </div>
+{% endif %}
+
+  {% if not authenticated %}
+<div class="container">
+  <div class="content">
+    You must be a registered user to post.
+  </div>
+</div>
+  {% endif %}
 {% endblock %}
