@@ -436,22 +436,22 @@ font[face] {
     border: 0;
 }
 a {
-    color: #b3d1ff;
+    color: #cce0ff;
 }
 a:hover {
-    color: #b3d1ff;
+    color: #cce0ff;
 }
 .postlink:link {
-    color: #b3d1ff;
+    color: #cce0ff;
 }
 .postlink:hover {
-    color: #b3d1ff;
+    color: #cce0ff;
 }
 .postlink:active {
-    color: #b3d1ff;
+    color: #cce0ff;
 }
 .postlink:visited {
-    color: #b3d1ff;
+    color: #cce0ff;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
