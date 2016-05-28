@@ -15,6 +15,7 @@ body {
 }
 * {
     letter-spacing: 0.5px;
+    font-family: "Georgia", Georgia, serif;
 }
 h1,
 h2,
@@ -52,7 +53,7 @@ p,
 }
 textarea {
     resize: vertical;
-    font-family: Arial, sans-serif;
+    font-family: Georgia, serif;
 }
 code {
     color: black;
@@ -62,7 +63,7 @@ code {
     padding: 1px 5px;
     border: 0px;
     font-size: 13px;
-    font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+    font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
     white-space: pre-wrap;
     background: rgba(202, 202, 202, .5);
     color: black;
@@ -109,7 +110,7 @@ input[type='password'] {
     border-bottom: 0;
 }
 .content {
-    font-family: Arial, Arial, sans-serif;
+    font-family: Georgia, Georgia, serif;
     font-size: 14px;
     border: 1px solid #bfbfbf;
     border-radius: 5px;
@@ -128,7 +129,7 @@ input[type='password'] {
     border: 0;
     border-radius: 0;
     font-size: 15px;
-    font-family: "Arial", Arial;
+    font-family: "Georgia", Georgia;
     z-index: 99;
 }
 .navbar-default .navbar-nav > li > a {
@@ -177,7 +178,6 @@ input[type='password'] {
 .author a,
 .link {
     color: #66ff66;
-    font-weight: bold;
     cursor: pointer;
 }
 .author a:hover,
@@ -189,7 +189,7 @@ input[type='password'] {
 }
 .mce-title {
     font-weight: normal;
-    font-family: Arial, sans-serif;
+    font-family: Georgia, serif;
 }
 .red {
     color: #ff8080;
@@ -278,7 +278,7 @@ input[type='password'] {
     border-radius: 4px;
 }
 textarea {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, serif;
     font-size: 14px;
 }
 #threadfeed div {
@@ -301,7 +301,7 @@ textarea {
     line-height: 97%;
 }
 .token {
-    font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+    font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
 }
 .logo {
     width: 100%;
@@ -319,7 +319,7 @@ textarea {
     transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     color: rgb(50, 50, 50);
-    font-family: "Arial", Arial;
+    font-family: "Georgia", Georgia;
     z-index: 999;
 }
 .in-center h1 {
@@ -336,7 +336,7 @@ textarea {
     -ms-transform: translateX(-50%) translateY(-50%);
     color: white;
     font-size: 23px;
-    font-family: "Arial";
+    font-family: "Georgia";
     width: 70%;
 }
 .navbar-right {
@@ -378,7 +378,7 @@ textarea {
     -ms-transform: translateX(-50%) translateY(-50%);
     color: rgb(40, 40, 40);
     font-size: 23px;
-    font-family: "Arial";
+    font-family: "Georgia";
 }
 .paypalbutton {
     display: inline-block;
@@ -406,22 +406,22 @@ textarea {
     border: 1px solid #d9d9d9;
 }
 span[style] {
-    font-family: Arial, Arial !important;
+    font-family: Georgia, Georgia !important;
 }
 font[style] {
-    font-family: Arial, Arial !important;
+    font-family: Georgia, Georgia !important;
 }
 font[face] {
-    font-family: Arial, Arial !important;
+    font-family: Georgia, Georgia !important;
 }
 .title-div {
     padding-top: 3px;
     padding-bottom: 15px;
-    font-family: "Arial", Arial;
+    font-family: "Georgia", Georgia;
     color: rgb(228, 228, 228);
 }
 .description-div {
-    font-family: "Arial", Arial;
+    font-family: "Georgia", Georgia;
     padding-bottom: 22px;
 }
 .title-div-2 {
@@ -493,7 +493,7 @@ input:-webkit-autofill:focus {
         margin-top: 200px;
         transform: translateX(-50%) translateY(-50%);
         -ms-transform: translateX(-50%) translateY(-50%);
-        font-family: "Arial", Arial;
+        font-family: "Georgia", Georgia;
     }
     .in-center h1 {
         font-size: 32px;

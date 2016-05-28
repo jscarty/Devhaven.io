@@ -36,13 +36,13 @@
   <div class="raleway">
     <div class="postdiv" style="position: relative;">
         <p><a href="../thread/{{ post.slug }}" class="postlink"><u>{{ post.title }}</u></a></p>
-        <p align="right">Written by <b><i>{{ post.author }}</i></b> on {{ post.created_on }}</p>
-        <p align="right">Posted in <span class="green"><b>{{ post.field }}</b></span></p>
+        <p align="right">Written by <i>{{ post.author }}</i> on {{ post.created_on }}</p>
+        <p align="right">Posted in <span class="green">{{ post.field }}</span></p>
         {% if post.commentCount > 0 %}
-          <p align="right">Responses: <span class="green"><b>{{ post.commentCount }}</b></span></p>
+          <p align="right">Responses: <span class="green">{{ post.commentCount }}</span></p>
         {% endif %}
         {% if post.commentCount == 0 %}
-          <p align="right">Reponses: <span class="red"><b>{{ post.commentCount }}</b></span></p>
+          <p align="right">Reponses: <span class="red">{{ post.commentCount }}</span></p>
         {% endif %}
         <br>
     </div>

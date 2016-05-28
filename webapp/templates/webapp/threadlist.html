@@ -99,7 +99,7 @@
    ],
   setup : function(ed) {
      ed.on('init', function(ed) {
-      ed.target.editorCommands.execCommand("fontName", false, "Helvetica");
+      ed.target.editorCommands.execCommand("fontName", false, "Georgia");
       ed.target.editorCommands.execCommand("fontSize", false, "13px");
      });
     }
@@ -148,12 +148,12 @@
             {% load hitcount_tags %}
             Views: {% get_hit_count for post %}<br>
             {% if post.title == "Best Resources for Front-end Development" %}
-              Written by <span class="author"><span class="green"><b>mememaster_owen</b></span> on {{ post.created_on }}<br>
+              Written by <span class="author"><span class="green">mememaster_owen</span> on {{ post.created_on }}<br>
             {% endif %}
             {% if post.title != "Best Resources for Front-end Development" %}
-              Written by <span class="author"><span class="green"><b>{{ post.author }}</b></span> on {{ post.created_on }}<br>
+              Written by <span class="author"><span class="green">{{ post.author }}</span> on {{ post.created_on }}<br>
             {% endif %}
-            Posted in <span class="green"><b>{{ post.field }}</b></span><br>
+            Posted in <span class="green">{{ post.field }}</span><br>
             {% if post.author == request.user  or request.user.username == "henrydavidzhu" %}
               <a href="{% url 'post_edit' pk=post.pk %}" class="link">Edit</a> or <a href="{% url 'delete_new' pk=post.pk %}" class="link">Delete</a> this thread<br>
             {% endif %}
