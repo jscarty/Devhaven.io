@@ -194,6 +194,9 @@ input[type='password'] {
 .red {
     color: #ff8080;
 }
+.red2 {
+    color: #ff0000;
+}
 #upvote,
 #downvote {
     font-size: 150%;
