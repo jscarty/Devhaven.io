@@ -36,7 +36,7 @@ def index(request):
 def register(request):
     form = UserForm(request.POST or None) # Registration form
     title = "Registration is quick and easy." # Title
-    instruction = "The <b>email*</b> is required but only the username is displayed.<br>As a matter of policy, we allow multiple accounts per user." #Instruction towards user
+    instruction = "The <b>email*</b> is required but only the username is displayed." #Instruction towards user
     displaySignUp = True # Only display the sign up if the user hasn't finished registering yet
 
     context = {

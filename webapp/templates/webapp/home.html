@@ -1,50 +1,58 @@
 {% extends "webapp/index.html" %}
 
 {% block content %}
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Devhaven.io</a>
+      <a class="navbar-brand" href="../">Devhaven.io</a>
     </div>
     <ul class="nav navbar-nav">
-		<li><a href="threadfeed">Threads</a></li>
-    {% if authenticated %}
-    <li><a href="startthread">Start Thread</a></li>
-		<li><a href="yourfeed">Your Threads</a></li>
-    {% endif %}
+      <li><a href="../threadfeed">Threads</a></li>
+      {% if authenticated %}
+        <li><a href="../startthread">Start Thread</a></li>
+        <li><a href="../yourfeed">Your Threads</a></li>
+      {% endif %}
     </ul>
     {% if not authenticated %}
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="register">Sign Up</a></li>
-        <li><a href="login">Login</a></li>
+        <li><a href="../register">Sign Up</a></li>
+        <li><a href="../login">Login</a></li>
       </ul>
     {% endif %}
     {% if authenticated %}
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout/">Logout</a></li>
+        <li><a href="../logout/">Logout</a></li>
       </ul>
     {% endif %}
   </div>
 </nav>
 
-<div class="in-center"><h1 align="center">Devhaven.io</h1><div align="center">Simple and quick <u>programming discussion</u>.</div></div>
 <img src="../../static/webapp/clouds.png" id="bg" alt="">
 
-<div id="about">
-<div id="aboutcontainer">
-<i>Devhaven.io</i> is a newly launched programming discussion forum created for programming enthusiasts. Registration is free, and members have full access to all of the programming threads of this site. All programming topics are allowed for discussion, from operating Systems to Web Development. In addition, Devhaven.io has advanced formatting and syntax highlighting inside its text editor for creating threads and responses, making discussion quick and easy.<br><br>
-- Made by <a href="mailto:henry.david.zhu@gmail.com" style="color: white;"><u>Henry Zhu</u></a> (Back End) and Owen Cheung (Front End)</div></div>
-<div id="donate">
-  <div id="donatecontainer"><div align="center">Donations are very much appreciated!</div>
-    <div align="center" id="donatebutton">
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="RWMZCW52FTXMJ">
-        <input type="submit" value="Donate to us" name="submit" title="PayPal - The safer, easier way to pay online!" class="paypalbutton">
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-      </form>
+<div class="container">
+  <div class="content" id="threadfeed">
+    <p></p>
+	  <h1 align="center" class="heading">Devhaven.io</h1>
+	  <h2 align="center" class="subheading"><u>Simple and quick programming discussion</u></h2><br>
+      <hr>
+{% for post in posts %}
+  <div class="raleway">
+    <div class="postdiv" style="position: relative;">
+        <div class="posttitle"><p><a href="../thread/{{ post.slug }}" class="postlink">{{ post.title }}</a></p></div>
+        <p align="right">Written by <i>{{ post.author }}</i> on {{ post.created_on }}</p>
+        <p align="right">Posted in <span class="green">{{ post.field }}</span></p>
+        {% if post.commentCount > 0 %}
+          <p align="right">Responses: <span class="green">{{ post.commentCount }}</span></p>
+        {% endif %}
+        {% if post.commentCount == 0 %}
+          <p align="right">Reponses: <span class="red">{{ post.commentCount }}</span></p>
+        {% endif %}
+        <br>
     </div>
   </div>
+  <hr>
+{% endfor %}
+  </div>
 </div>
+<br>
 {% endblock %}
