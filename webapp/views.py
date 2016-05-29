@@ -223,7 +223,7 @@ def post_list(request):
     return render(request, 'webapp/threadfeed.html', context)
 
 def your_post(request):
-    posts2 = Post.objects.filter(author__username=str(request.user))
+    posts2 = Post.objects.all().filter(author__username=str(request.user)).order_by('-created_on') # Use filter on the QuerySet to sort by time
 
     for post in posts2:
         numComments = 0
