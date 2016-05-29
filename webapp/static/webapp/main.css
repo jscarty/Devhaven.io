@@ -204,29 +204,12 @@ input[type='password'] {
 .red2 {
     color: #ff0000;
 }
-#upvote,
-#downvote {
-    font-size: 150%;
-}
-#upvote:hover,
-#downvote:hover {
-    text-decoration: none;
-    cursor: pointer;
-}
-#upvote:hover {
-    color: #239023;
-}
-#downvote:hover {
-    color: #ff3333;
-}
 .overflow {
     overflow: auto;
 }
 .over {
     overflow: auto;
 }
-/* Layout styles */
-
 #right {
     border-left: 1px solid #ccc;
 }
@@ -304,21 +287,13 @@ textarea {
 .token {
     font-family: Inconsolata, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Inconsolata', monospace, monospace;
 }
-.logo {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -webkit-filter: blur(0);
-}
 .in-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%); 
     color: rgb(50, 50, 50);
     font-family: Inconsolata, monospace;
     letter-spacing: 0.5px;
@@ -336,6 +311,7 @@ textarea {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%); 
     color: white;
     font-size: 23px;
     font-family: "Inconsolata";
