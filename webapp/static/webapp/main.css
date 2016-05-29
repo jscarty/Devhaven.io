@@ -123,7 +123,7 @@ input[type='password'] {
     color: rgb(240, 240, 240);
 }
 #description {
-	font-size: 15px;
+	font-size: 17px;
 }
 .content {
     width: 100%;
@@ -481,6 +481,9 @@ input:-webkit-autofill:focus {
     #aboutcontainer {
         font-size: 130%;
     }
+	#description {
+		font-size: 15px;
+	}
 }
 @media screen and (max-width: 778px) {
     .in-center {
