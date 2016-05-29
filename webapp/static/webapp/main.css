@@ -362,7 +362,7 @@ textarea {
 }
 .paypalbutton {
     display: inline-block;
-    background-color: rgb(100, 100, 100);
+    background-color: #009900;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -378,7 +378,7 @@ textarea {
     width: auto;
 }
 .paypalbutton:hover {
-    background-color: rgb(120, 120, 120);
+    background-color: #269900;
 }
 .content {
     border: 0;
