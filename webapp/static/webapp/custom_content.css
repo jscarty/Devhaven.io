@@ -1,4 +1,4 @@
-body, td, pre {color:#000; font-family: "Georgia", Georgia, serif; font-size:13px; margin:8px;}
-span, p {font-family: "Georgia", Georgia, serif;}
-p {font-family: "Georgia", Georgia, serif;}
-*[style] {font-family: "Georgia", Georgia, serif;}
+body, td, pre {color:#000; font-family: "Inconsolata", Inconsolata, monospace; font-size:13px; margin:8px;}
+span, p {font-family: "Inconsolata", Inconsolata, monospace;}
+p {font-family: "Inconsolata", Inconsolata, monospace;}
+*[style] {font-family: "Inconsolata", Inconsolata, monospace;}

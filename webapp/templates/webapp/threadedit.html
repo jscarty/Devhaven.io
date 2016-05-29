@@ -4,10 +4,10 @@
 <script>
   tinymce.init({ selector:'textarea',
   plugins: "codesample link",
-  toolbar: "styleselect | undo redo | removeformat | bold italic underline |  aligncenter alignjustify  | bullist numlist outdent indent | link | fontsizeselect | codesample",
-  content_css: "../../../static/webapp/custom_content.css",
+  toolbar: "styleselect | undo redo | removeformat | bold italic underline |  aligncenter alignjustify  | bullist numlist outdent indent | link | codesample",
+  content_css: "../../../static/webapp/custom_content.css,http://fonts.googleapis.com/css?family=Inconsolata",
   'paste_remove_spans': true,
-  fontsize_formats: "13px 18px 21px",
+  fontsize_formats: "16px",
   style_formats:
    [
       {
@@ -99,8 +99,8 @@
    ],
   setup : function(ed) {
      ed.on('init', function(ed) {
-      ed.target.editorCommands.execCommand("fontName", false, "Georgia");
-      ed.target.editorCommands.execCommand("fontSize", false, "13px");
+      ed.target.editorCommands.execCommand("fontName", false, "Inconsolata");
+      ed.target.editorCommands.execCommand("fontSize", false, "16px");
      });
     }
   });

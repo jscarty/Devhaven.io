@@ -32,10 +32,11 @@
 <div class="container">
   <div class="content" id="threadfeed">
     <p></p>
+      <hr>
 {% for post in posts %}
   <div class="raleway">
     <div class="postdiv" style="position: relative;">
-        <p><a href="../thread/{{ post.slug }}" class="postlink"><u>{{ post.title }}</u></a></p>
+        <div class="posttitle"><p><a href="../thread/{{ post.slug }}" class="postlink">{{ post.title }}</a></p></div>
         <p align="right">Written by <i>{{ post.author }}</i> on {{ post.created_on }}</p>
         <p align="right">Posted in <span class="green">{{ post.field }}</span></p>
         {% if post.commentCount > 0 %}
