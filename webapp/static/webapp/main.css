@@ -241,7 +241,7 @@ input[type='password'] {
 }
 .form-register .form-control {
     position: relative;
-    font-size: 14px;
+    font-size: 16px;
     height: auto;
     padding: 10px;
     -webkit-box-sizing: border-box;
@@ -446,8 +446,18 @@ a {
 a:hover {
     color: #cce0ff;
 }
+a:link {
+    color: #cce0ff;
+}
+a:active {
+    color: #cce0ff;
+}
+a:visited {
+    color: #cce0ff;
+}
 a.postlink {
     text-decoration: none;
+	color: #cce0ff;
 }
 .postlink:link {
     color: #cce0ff;
@@ -460,6 +470,9 @@ a.postlink {
 }
 .postlink:visited {
     color: #cce0ff;
+}
+input {
+	font-size: 16px;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

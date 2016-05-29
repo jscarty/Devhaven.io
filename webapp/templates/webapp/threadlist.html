@@ -199,7 +199,7 @@
                   {{ comment.text | safe }}
               </p>
               <p align="right">
-                  <a href="{{ comment.website }}" class="link">{{ comment.name }}</a> said on {{ comment.created_on }}<br>
+                  <span class="green">{{ comment.name }}</span> said on {{ comment.created_on }}<br>
                   {% if comment.name == request.user or request.user.username == "henrydavidzhu" %}
                      <a href="{% url 'response_edit' pk=comment.pk %}" class="link">Edit</a> or <a href="{% url 'delete_response' pk=comment.pk %}" class="link">Delete</a> this response<br>
                   {% endif %}
