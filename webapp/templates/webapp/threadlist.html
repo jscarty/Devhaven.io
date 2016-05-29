@@ -155,7 +155,8 @@
             {% endif %}
             Posted in <span class="green">{{ post.field }}</span><br>
             {% if post.author == request.user  or request.user.username == "henrydavidzhu" %}
-              <a href="{% url 'post_edit' pk=post.pk %}" class="link">Edit</a> or <a href="{% url 'delete_new' pk=post.pk %}" class="link">Delete</a> this thread<br>
+              <a href="{% url 'post_edit' pk=post.pk %}" class="link" style="color: #66ff66;">Edit</a> or 
+			  <a href="{% url 'delete_new' pk=post.pk %}" class="link" style="color: #66ff66;">Delete</a> this thread<br>
             {% endif %}
             <br>
         </p>
@@ -201,7 +202,8 @@
               <p align="right">
                   <span class="green">{{ comment.name }}</span> said on {{ comment.created_on }}<br>
                   {% if comment.name == request.user or request.user.username == "henrydavidzhu" %}
-                     <a href="{% url 'response_edit' pk=comment.pk %}" class="link">Edit</a> or <a href="{% url 'delete_response' pk=comment.pk %}" class="link">Delete</a> this response<br>
+                     <a href="{% url 'response_edit' pk=comment.pk %}" class="link" style="color: #66ff66;">Edit</a> or 
+					 <a href="{% url 'delete_response' pk=comment.pk %}" class="link" style="color: #66ff66;">Delete</a> this response<br>
                   {% endif %}
               </p>
               <hr>
