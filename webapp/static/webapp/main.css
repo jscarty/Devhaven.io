@@ -519,15 +519,18 @@ input:-webkit-autofill:focus {
 }
 @media screen and (max-width: 485px) {
     #aboutcontainer {
-        font-size: 102%;
+        font-size: 110%;
     }
     .in-center h1 {
         font-size: 29px;
     }
+	.paypalbutton {
+		font-size: 90%;
+	}
 }
 @media screen and (max-width: 380px) {
     #aboutcontainer {
-        font-size: 96%;
+        font-size: 105%;
     }
     .in-center h1 {
         font-size: 29px;
