@@ -474,7 +474,7 @@ input:-webkit-autofill:focus {
 .content span[style] {
 	font-size: 17px !important;
 }
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 1080px) {
     #bg {
         display: none;
     }
