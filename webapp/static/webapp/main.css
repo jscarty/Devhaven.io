@@ -468,6 +468,9 @@ input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 1000px white inset !important;
     border-bottom: 0px solid rgb(220, 220, 220) !important;
 }
+.comments span[style] {
+	font-size: 17px !important;
+}
 @media screen and (max-width: 1190px) {
     #bg {
         display: none;
