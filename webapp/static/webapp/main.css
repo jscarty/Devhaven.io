@@ -471,7 +471,10 @@ input:-webkit-autofill:focus {
 .comments span[style] {
 	font-size: 17px !important;
 }
-@media screen and (max-width: 1190px) {
+.content span[style] {
+	font-size: 17px !important;
+}
+@media screen and (max-width: 1100px) {
     #bg {
         display: none;
     }
