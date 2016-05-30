@@ -14,7 +14,7 @@ body {
     width: 100%;
 }
 * {
-    font-family: "Inconsolata", Inconsolata, monospace;
+    font-family: "Helvetica", Helvetica, sans-serif;
 }
 h1,
 h2,
@@ -57,7 +57,7 @@ p,
 }
 textarea {
     resize: vertical;
-    font-family: Inconsolata, monospace;
+    font-family: Helvetica, sans-serif;
 }
 code {
     color: black;
@@ -67,7 +67,7 @@ code {
     padding: 1px 5px;
     border: 0px;
     font-size: 16px;
-    font-family: Inconsolata, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Inconsolata', monospace, monospace;
+    font-family: Helvetica, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Helvetica', sans-serif, sans-serif;
     white-space: pre-wrap;
     background: rgba(202, 202, 202, .5);
     color: black;
@@ -114,7 +114,7 @@ input[type='password'] {
     border-bottom: 0;
 }
 .content {
-    font-family: Inconsolata, Inconsolata, monospace;
+    font-family: Helvetica, Helvetica, sans-serif;
     font-size: 15px;
     border: 1px solid #bfbfbf;
     border-radius: 5px;
@@ -129,14 +129,14 @@ input[type='password'] {
     width: 100%;
 }
 .navbar-brand {
-    font-size: 23px;
+    font-size: 21px;
 }
 .navbar {
     background: rgb(100, 100, 100);
     border: 0;
     border-radius: 0;
     font-size: 19px;
-    font-family: "Inconsolata", Inconsolata;
+    font-family: "Helvetica", Helvetica;
     z-index: 99;
 }
 .navbar-default .navbar-nav > li > a {
@@ -196,7 +196,7 @@ input[type='password'] {
 }
 .mce-title {
     font-weight: normal;
-    font-family: Inconsolata, monospace;
+    font-family: Helvetica, sans-serif;
 }
 .red {
     color: #ff8080;
@@ -268,7 +268,7 @@ input[type='password'] {
     border-radius: 4px;
 }
 textarea {
-    font-family: Inconsolata, monospace;
+    font-family: Helvetica, sans-serif;
     font-size: 14px;
 }
 #threadfeed div {
@@ -285,7 +285,7 @@ textarea {
     line-height: 97%;
 }
 .token {
-    font-family: Inconsolata, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Inconsolata', monospace, monospace;
+    font-family: Helvetica, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Helvetica', sans-serif, sans-serif;
 }
 .in-center {
     position: absolute;
@@ -295,7 +295,7 @@ textarea {
     -ms-transform: translateX(-50%) translateY(-50%);
 	-webkit-transform: translateX(-50%) translateY(-50%); 
     color: rgb(50, 50, 50);
-    font-family: Inconsolata, monospace;
+    font-family: Helvetica, sans-serif;
     letter-spacing: 0.5px;
     z-index: 999;
 }
@@ -314,7 +314,7 @@ textarea {
 	-webkit-transform: translateX(-50%) translateY(-50%); 
     color: white;
     font-size: 23px;
-    font-family: "Inconsolata";
+    font-family: "Helvetica";
     width: 70%;
 }
 .navbar-right {
@@ -357,7 +357,7 @@ textarea {
 	-webkit-transform: translateX(-50%) translateY(-50%); 
     color: rgb(40, 40, 40);
     font-size: 25px;
-    font-family: "Inconsolata", monospace;
+    font-family: "Helvetica", sans-serif;
 	width: 90%;
 }
 .paypalbutton {
@@ -386,23 +386,23 @@ textarea {
     border: 1px solid #d9d9d9;
 }
 span[style] {
-    font-family: Inconsolata, Inconsolata !important;
+    font-family: Helvetica, Helvetica !important;
 	font-size: 16px !important;
 }
 font[style] {
-    font-family: Inconsolata, Inconsolata !important;
+    font-family: Helvetica, Helvetica !important;
 }
 font[face] {
-    font-family: Inconsolata, Inconsolata !important;
+    font-family: Helvetica, Helvetica !important;
 }
 .title-div {
     padding-top: 3px;
     padding-bottom: 15px;
-    font-family: "Inconsolata", Inconsolata;
+    font-family: "Helvetica", Helvetica;
     color: rgb(235, 235, 235);
 }
 .description-div {
-    font-family: "Inconsolata", Inconsolata;
+    font-family: "Helvetica", Helvetica;
     padding-bottom: 22px;
 }
 .title-div-2 {
@@ -449,8 +449,8 @@ a.postlink {
 .postlink:visited {
     color: #cce0ff;
 }
-input {
-	font-size: 16px;
+input[style] {
+	font-size: 16px !important;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -499,7 +499,7 @@ input:-webkit-autofill:focus {
         margin-top: 212px;
         transform: translateX(-50%) translateY(-50%);
         -ms-transform: translateX(-50%) translateY(-50%);
-        font-family: "Inconsolata", Inconsolata;
+        font-family: "Helvetica", Helvetica;
     }
     #aboutcontainer {
         font-size: 120%;
