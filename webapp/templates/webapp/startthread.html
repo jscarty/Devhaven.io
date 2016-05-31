@@ -156,7 +156,7 @@
 
         <div class="form-group">
           <div class="col-md-12">     
-            <textarea id="id_text" name="text" rows="10" placeholder="Content" pattern=".{120,}" title="The content must be at least 120 characters in length." class="tinymce"></textarea>
+            <textarea id="id_text" name="text" rows="10" placeholder="Content" class="tinymce"></textarea>
           </div>
         </div>
 
@@ -212,4 +212,13 @@
   </div>
 </div>
   {% endif %}
+
+  <script>
+    var error = "{{error}}";
+    console.log("Error length: " + error.length);
+    
+    if (error.length > 0) {
+      alert(error);
+    }
+  </script>
 {% endblock %}

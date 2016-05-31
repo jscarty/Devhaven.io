@@ -144,7 +144,7 @@
             {% csrf_token %}
             <div class="form-group">
               <div class="col-md-12">     
-                <textarea id="id_text" name="text" rows="10" placeholder="Content" pattern=".{120,}" title="The content must be at least 120 characters in length." class="tinymce">{{ comment.text }}</textarea>
+                <textarea id="id_text" name="text" rows="10" placeholder="Content" class="tinymce">{{ comment.text }}</textarea>
               </div>
             </div>
 

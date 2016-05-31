@@ -105,6 +105,9 @@ def logout(request):
 @user_passes_test(lambda u: u.is_authenticated)
 def add_post(request):
     form = PostForm(request.POST or None) # Form for posting threads
+    error = ""
+
+    context = { 'form': form, "authenticated": request.user.is_authenticated(), "error": error }
 
     if request.method == "POST":
         if form.is_valid() and request.user.is_authenticated(): # Check if the form is validated and the user has been authenticated
@@ -115,11 +118,13 @@ def add_post(request):
             for post in comparePosts:
                 if post.title == form.cleaned_data.get("title"):
                     duplicate = True
+                    break
 
             print("Duplicate: " + str(duplicate))
 
             if duplicate:
                 print("Title has already been used before.")
+                context["error"] = "Validation error: Title has already been used before."
             else:
                 try:
                     post = Post.objects.create(author=request.user, title=form.cleaned_data.get("title"), text=form.cleaned_data.get("text"), 
@@ -130,10 +135,9 @@ def add_post(request):
         else:
             print("Invalid form")
             print(form.errors)
+            context["error"] = "Validation error: The text field is blank."
 
-    return render_to_response('webapp/startthread.html', 
-                              { 'form': form,
-                                "authenticated": request.user.is_authenticated() },
+    return render_to_response('webapp/startthread.html', context,
                               context_instance=RequestContext(request))
 
 def post_edit(request, pk):
