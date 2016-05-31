@@ -1,5 +1,5 @@
 from django import forms
-from .models import User, Post, Comment
+from .models import User, Post, Comment, SearchTerm
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -28,3 +28,8 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         exclude = ['post']
+
+class SearchForm(forms.ModelForm):
+	class Meta:
+		model = SearchTerm
+		fields = ['category']

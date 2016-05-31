@@ -82,3 +82,29 @@ class Comment(models.Model):
 
     def __unicode__(self):
         return self.text
+
+class SearchTerm(models.Model):
+    CHOICES = [
+        ('Hardware and OS', 'Hardware and OS'),
+        ('Desktops', 'Desktops'),
+        ('Tablets', 'Tablets'),
+        ('Phones', 'Phones'),
+        ('Wearables', 'Wearables'),
+        ('Windows', 'Windows'),
+        ('Mac OS X', 'Mac OS X'),
+        ('Linux and Unix', 'Linux and Unix'),
+        ('Programming and Computer Science', 'Programming and Computer Science'),
+        ('Software Development', 'Software Development'),
+        ('Web Development (Front)', 'Web Development (Front)'),
+        ('Web Development (Back)', 'Web Development (Back)'),
+        ('Mobile Development', 'Mobile Development'),
+        ('Game Development', 'Game Development'),
+        ('Algorithms and Data Structures', 'Algorithms and Data Structures'),
+        ('Databases', 'Databases'),
+        ('IDE / Text Editors', 'IDE / Text Editors'),
+        ('Community Discussion', 'Community Discussion'),
+        ('Tutorial', 'Tutorial'),
+        ('Opinion', 'Opinion'),
+        ('Miscellaneous', 'Miscellaneous')
+    ]
+    category = models.CharField(choices=CHOICES, max_length=200)
