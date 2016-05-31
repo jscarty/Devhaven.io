@@ -241,7 +241,8 @@ def post_list(request):
 
 def your_post(request):
     posts2 = Post.objects.all().filter(author__username=str(request.user)).order_by('-created_on') # Use filter on the QuerySet to sort by time
-
+    numPosts = len(posts2)
+	
     for post in posts2:
         numComments = 0
 
@@ -250,4 +251,4 @@ def your_post(request):
 
         post.commentCount = numComments
 
-    return render(request, 'webapp/yourthreads.html', {'authenticated': request.user.is_authenticated(), 'posts':posts2})
+    return render(request, 'webapp/yourthreads.html', {'authenticated': request.user.is_authenticated(), 'posts':posts2, 'numPosts':numPosts})
