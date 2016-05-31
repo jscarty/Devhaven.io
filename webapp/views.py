@@ -108,12 +108,25 @@ def add_post(request):
 
     if request.method == "POST":
         if form.is_valid() and request.user.is_authenticated(): # Check if the form is validated and the user has been authenticated
-            try:
-                post = Post.objects.create(author=request.user, title=form.cleaned_data.get("title"), text=form.cleaned_data.get("text"), 
-				field = form.cleaned_data.get("field"))
-                return redirect(post)
-            except IntegrityError as e:
-                print(e)
+            comparePosts = Post.objects.all()
+
+            duplicate = False
+
+            for post in comparePosts:
+                if post.title == form.cleaned_data.get("title"):
+                    duplicate = True
+
+            print("Duplicate: " + str(duplicate))
+
+            if duplicate:
+                print("Title has already been used before.")
+            else:
+                try:
+                    post = Post.objects.create(author=request.user, title=form.cleaned_data.get("title"), text=form.cleaned_data.get("text"), 
+    				field = form.cleaned_data.get("field"))
+                    return redirect(post)
+                except IntegrityError as e:
+                    print(e)
         else:
             print("Invalid form")
             print(form.errors)
