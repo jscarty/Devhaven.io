@@ -437,6 +437,10 @@ a:visited {
 a.postlink {
     text-decoration: none;
 	color: #cce0ff;
+    line-height: 115%;
+}
+.timestamp, .category {
+    line-height: 115%;
 }
 .postlink:link {
     color: #cce0ff;
@@ -476,6 +480,9 @@ input:-webkit-autofill:focus {
 	font-size: 17px !important;
 }
 @media screen and (max-width: 1089px) {
+    .postdiv {
+        line-height: 105%;
+    }
     #bg {
         display: none;
     }
@@ -493,6 +500,9 @@ input:-webkit-autofill:focus {
 	}
 }
 @media screen and (max-width: 778px) {
+    .postdiv {
+        line-height: 110%;
+    }
     .in-center {
         position: absolute;
         top: 50%;
