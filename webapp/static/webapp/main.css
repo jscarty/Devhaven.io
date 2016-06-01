@@ -5,7 +5,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: rgb(222, 222, 222);
+    background: rgb(80, 80, 80);
     color: black;
 }
 .accent {
@@ -296,7 +296,7 @@ textarea {
     transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
 	-webkit-transform: translateX(-50%) translateY(-50%); 
-    color: rgb(50, 50, 50);
+    color: rgb(238, 238, 238);
     font-family: Helvetica, sans-serif;
     letter-spacing: 0.5px;
     z-index: 999;
@@ -343,7 +343,6 @@ textarea {
 .content {
     border: 0;
     position: relative;
-    border: 1px solid #d9d9d9;
 }
 span[style] {
     font-family: Helvetica, Helvetica !important;
