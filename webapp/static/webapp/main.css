@@ -447,11 +447,11 @@ input:-webkit-autofill:focus {
     border: 0;
     border-radius: 5px;
     outline: 0;
-    background: rgb(230, 230, 230);
+    background: rgb(240, 240, 240);
     color: rgb(20, 20, 20);
 }
 #parsebutton:active {
-	background: rgb(225, 225, 225);
+	background: rgb(235, 235, 235);
 }
 @media screen and (max-width: 1089px) {
     .postdiv {

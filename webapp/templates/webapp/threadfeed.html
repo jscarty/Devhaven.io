@@ -32,9 +32,10 @@
 <div class="container">
   <div class="content" id="threadfeed">
     <p></p>
-	<!--
-	  <div style="font-size: 17px;">I want to <button id="parsebutton">parse</button> through 
-		    <select style="font-size: 16px; padding: 4px;">
+	  <form action="" method="POST"><div style="font-size: 17px;">{% csrf_token %}I want to <input type="submit" id="parsebutton" value="parse"> through 
+		    <select style="font-size: 16px; padding: 4px;" name="category">
+                <option disabled></option>
+                <option value='all'>all</option>
                 <option disabled></option>
                 <option>Hardware and OS</option>
                 <option value="Desktops">&nbsp;&nbsp;&nbsp;&nbsp;Desktops</option>
@@ -61,7 +62,7 @@
                 <option value="Miscellaneous">&nbsp;&nbsp;&nbsp;&nbsp;Miscellaneous</option>
                 <option disabled></option>
             </select>
-		posts.</div>-->
+		posts.</div></form>
       <hr>
 {% for post in posts %}
   <div class="raleway">

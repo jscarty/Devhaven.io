@@ -85,6 +85,7 @@ class Comment(models.Model):
 
 class SearchTerm(models.Model):
     CHOICES = [
+        ('all', 'all'),
         ('Hardware and OS', 'Hardware and OS'),
         ('Desktops', 'Desktops'),
         ('Tablets', 'Tablets'),

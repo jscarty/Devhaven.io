@@ -10,8 +10,8 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.template import RequestContext
 from django.contrib.auth.decorators import user_passes_test
-from .models import Post, Comment
-from .forms import PostForm, CommentForm
+from .models import Post, Comment, SearchTerm
+from .forms import PostForm, CommentForm, SearchForm
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 from hitcount.models import HitCount
@@ -227,15 +227,23 @@ def post_list(request):
     posts = Post.objects.all().filter().order_by('-created_on') # Use filter on the QuerySet to sort by time
     context = {'posts' : posts, 'authenticated': request.user.is_authenticated()}
 
-    numComments = 0
+    if request.method == "POST":
+        searchForm = SearchForm(request.POST or None)
+
+        if searchForm.is_valid():
+            category = searchForm.cleaned_data.get('category')
+
+            if category == 'all':
+                return redirect("../threadfeed")
+            else:
+                searchPosts = Post.objects.all().filter(field=category).order_by('-created_on')
+
+            context['posts'] = searchPosts
+        else:
+            print(searchForm.errors)
 
     for post in posts:
-        numComments = 0
-
-        for comment in post.comment_set.all():
-            numComments = numComments + 1
-
-        post.commentCount = numComments
+        post.commentCount = len(post.comment_set.all())
 
     return render(request, 'webapp/threadfeed.html', context)
 
@@ -244,11 +252,6 @@ def your_post(request):
     numPosts = len(posts2)
 	
     for post in posts2:
-        numComments = 0
-
-        for comment in post.comment_set.all():
-            numComments = numComments + 1
-
-        post.commentCount = numComments
+        post.commentCount = len(post.comment_set.all())
 
     return render(request, 'webapp/yourthreads.html', {'authenticated': request.user.is_authenticated(), 'posts':posts2, 'numPosts':numPosts})
