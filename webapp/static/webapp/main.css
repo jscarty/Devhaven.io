@@ -328,7 +328,7 @@ textarea {
     position: relative;
     top: 100%;
     height: 480px;
-    overflow: auto;
+    overflow: hidden;
 }
 #bg {
     position: fixed;
