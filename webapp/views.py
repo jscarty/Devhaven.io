@@ -37,6 +37,9 @@ def index(request):
             else:
                 searchPosts = Post.objects.all().filter(field=category).order_by('-created_on')
 
+                for post in searchPosts:
+                    post.commentCount = len(post.comment_set.all())
+
             context['posts'] = searchPosts
         else:
             print(searchForm.errors)
