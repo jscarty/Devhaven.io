@@ -179,11 +179,6 @@
     </div>
     {% endif %}
 
-    {% if not request.user.is_authenticated %}
-    <div class="content" style="font-size: 16px;">
-      You must be a regsistered user to post responses.
-    </div>
-    {% endif %}
     <br>
 
     {% if post.comment_set.all %}
