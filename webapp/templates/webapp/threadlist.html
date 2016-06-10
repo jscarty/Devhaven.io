@@ -105,33 +105,30 @@
     }
   });
 </script>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="../../">Devhaven.io</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="../../threadfeed">Threads</a></li>
-      {% if authenticated %}
-        <li><a href="../../startthread">Start Thread</a></li>
-        <li><a href="../../yourfeed">Your Threads</a></li>
-      {% endif %}
-    </ul>
-    {% if not authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../../register">Sign Up</a></li>
-        <li><a href="../../login">Login</a></li>
-      </ul>
-    {% endif %}
-    {% if authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../../logout/">Logout</a></li>
-      </ul>
-    {% endif %}
-  </div>
-</nav>
-
-<img src="../../static/webapp/clouds.png" id="bg" alt="">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="../../" id="navtitle"><b>Devhaven.io</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          {% if authenticated %}
+            <li><a href="../../startthread">Start Thread</a></li>
+            <li><a href="../../yourfeed">Your Threads</a></li>
+          {% endif %}
+        </ul>
+        {% if not authenticated %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../register">Sign Up</a></li>
+            <li><a href="../../login">Login</a></li>
+          </ul>
+        {% endif %}
+        {% if authenticated %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../logout/">Logout</a></li>
+          </ul>
+        {% endif %}
+      </div>
+    </nav>
 
 <div class="container">
     <div class="content" style="position: relative;">
@@ -155,16 +152,14 @@
             {% endif %}
             Posted in <span class="green">{{ post.field }}</span><br>
             {% if post.author == request.user  or request.user.username == "henrydavidzhu" %}
-              <a href="{% url 'post_edit' pk=post.pk %}" class="link" style="color: #66ff66;">Edit</a> or 
-			  <a href="{% url 'delete_new' pk=post.pk %}" class="link" style="color: #66ff66;">Delete</a> this thread<br>
+              <a href="{% url 'post_edit' pk=post.pk %}" class="green">Edit</a> or 
+			  <a href="{% url 'delete_new' pk=post.pk %}" class="green">Delete</a> this thread<br>
             {% endif %}
-            <br>
         </p>
     </div>
-    <br>
         {% if request.user.is_authenticated %}
     <div class="content" style="position: relative;">
-        <div class="title-div"><h1 align="center" class="montserrat">Add Response</h1></div>
+        <div class="title-div"><h1 align="center" class="montserrat">Add Response</h1></div><br>
         <div class="description-div">
         <p id="description">Before posting a new response, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <b>LaTeX</b> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p></div>
         <form action="" method="POST" action="" class="form-horizontal">
@@ -176,8 +171,8 @@
             </div>
 
             <div class="form-group">
-              <div class="col-md-12">
-                <button type="submit" class="btn btn-primary" id="sign-up">Submit New Response</button>
+              <div class="col-md-3" id="submit-thread">
+                <button type="submit" class="btn btn-primary" id="submit-button">Submit New Response</button>
               </div>
             </div>
         </form>
@@ -194,6 +189,9 @@
     {% if post.comment_set.all %}
     <div class="comments" style="position: relative;">
       <div class="content">
+        {% if post.commentCount > 0 %}
+          <hr>
+        {% endif %}
         {% for comment in post.comment_set.all %}
             
               <p>
@@ -202,8 +200,8 @@
               <p align="right">
                   <span class="green">{{ comment.name }}</span> said on {{ comment.created_on }}<br>
                   {% if comment.name == request.user or request.user.username == "henrydavidzhu" %}
-                     <a href="{% url 'response_edit' pk=comment.pk %}" class="link" style="color: #66ff66;">Edit</a> or 
-					 <a href="{% url 'delete_response' pk=comment.pk %}" class="link" style="color: #66ff66;">Delete</a> this response<br>
+                     <a href="{% url 'response_edit' pk=comment.pk %}" class="green">Edit</a> or 
+					 <a href="{% url 'delete_response' pk=comment.pk %}" class="green">Delete</a> this response<br>
                   {% endif %}
               </p>
               <hr>

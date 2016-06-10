@@ -21,15 +21,28 @@ import operator
 posts = Post.objects.all().filter().order_by('-created_on') # Get all the posts on Devhaven.io
 
 def index(request):
-    title = "Devhaven.io" # The display message when the user isn't logged in
+    global posts
 
-    if (request.user.is_authenticated()): # If the user is logged-in, display Welcome Back!
-        title = "Welcome back {0}.".format(request.user)
+    posts = Post.objects.all().filter().order_by('-created_on') # Use filter on the QuerySet to sort by time
+    context = {'posts' : posts, 'authenticated': request.user.is_authenticated()}
 
-    context = {
-        "template_title": title, # Pass in the title of the web page
-        "authenticated": request.user.is_authenticated() # Pass in whether the user is authenticated or not
-    } 
+    if request.method == "POST":
+        searchForm = SearchForm(request.POST or None)
+
+        if searchForm.is_valid():
+            category = searchForm.cleaned_data.get('category')
+
+            if category == 'all':
+                return redirect("../home")
+            else:
+                searchPosts = Post.objects.all().filter(field=category).order_by('-created_on')
+
+            context['posts'] = searchPosts
+        else:
+            print(searchForm.errors)
+
+    for post in posts:
+        post.commentCount = len(post.comment_set.all())
 
     return render(request, 'webapp/home.html', context)
 
@@ -74,7 +87,7 @@ def register(request):
 
 def login(request):
     next = request.GET.get('next', '/') # Direct the user to the home page after he / she logs in.
-    instruction = "Sign in using your valid username and password (<b>case-sensitive</b>)."
+    instruction = "Login validation is <b>case-sensitive</b>."
 
     if request.method == "POST":
         username = request.POST['username'] # Get the username entered
@@ -195,6 +208,8 @@ def view_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
     form = CommentForm(request.POST or None)
 
+    post.commentCount = len(post.comment_set.all())
+
     hit_count = HitCount.objects.get_for_object(post)
     hit_count_response = HitCountMixin.hit_count(request, hit_count)
     print(hit_count_response)
@@ -220,32 +235,6 @@ def view_post(request, slug):
                                   'authenticated': request.user.is_authenticated
                               },
                               context_instance=RequestContext(request))
-
-def post_list(request):
-    global posts
-
-    posts = Post.objects.all().filter().order_by('-created_on') # Use filter on the QuerySet to sort by time
-    context = {'posts' : posts, 'authenticated': request.user.is_authenticated()}
-
-    if request.method == "POST":
-        searchForm = SearchForm(request.POST or None)
-
-        if searchForm.is_valid():
-            category = searchForm.cleaned_data.get('category')
-
-            if category == 'all':
-                return redirect("../threadfeed")
-            else:
-                searchPosts = Post.objects.all().filter(field=category).order_by('-created_on')
-
-            context['posts'] = searchPosts
-        else:
-            print(searchForm.errors)
-
-    for post in posts:
-        post.commentCount = len(post.comment_set.all())
-
-    return render(request, 'webapp/threadfeed.html', context)
 
 def your_post(request):
     posts2 = Post.objects.all().filter(author__username=str(request.user)).order_by('-created_on') # Use filter on the QuerySet to sort by time

@@ -105,40 +105,36 @@
     }
   });
 </script>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="../../../../">Devhaven.io</a>
-    </div>
-    <ul class="nav navbar-nav">
-		<li><a href="../../../threadfeed">Threads</a></li>
-      {% if authenticated %}
-        <li><a href="../../../startthread">Start Thread</a></li>
-        <li><a href="../../../yourfeed">Your Threads</a></li>
-      {% endif %}
-    </ul>
-    {% if not authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../../../register">Sign Up</a></li>
-        <li><a href="../../../login">Login</a></li>
-      </ul>
-    {% endif %}
-    {% if authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../../../logout/">Logout</a></li>
-      </ul>
-    {% endif %}
-  </div>
-</nav>
 
-<img src="../../../static/webapp/clouds.png" id="bg" alt="">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="../../../" id="navtitle"><b>Devhaven.io</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          {% if authenticated %}
+            <li><a href="../../../startthread">Start Thread</a></li>
+            <li><a href="../../../yourfeed">Your Threads</a></li>
+          {% endif %}
+        </ul>
+        {% if not authenticated %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../../register">Sign Up</a></li>
+            <li><a href="../../../login">Login</a></li>
+          </ul>
+        {% endif %}
+        {% if authenticated %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../../logout/">Logout</a></li>
+          </ul>
+        {% endif %}
+      </div>
+    </nav>
 
 {% if post.author == request.user or request.user.username == "henrydavidzhu" %}
 <div class="container">
   <div class="content">
-    <div class="title-div">
-  	 <h1 align="center" class="montserrat">Modify an existing discussion.</h1>
-    </div>
+    <h1>/threadedit</h1><br>
     
     <div class="description-div">
         <p id="description">Before editing a thread, please glance your post over to make sure that it is on-topic (must relate directly to programming) and thorough (provides enough detail), yet is concise and clear. <b>LaTeX</b> features and syntax highlighting for more languages will be supported soon. Currently, we support syntax highlighting for 10 major languages (HTML/XML, JavaScript, CSS, PHP, Ruby, Python, Java, C, C#, and C++).</p>
@@ -191,8 +187,8 @@
         </div>
 
           <div class="form-group">
-            <div class="col-md-12">
-            <button type="submit" class="btn btn-primary" id="sign-up">Save Changes To Thread</button>
+            <div class="col-md-3" id="submit-thread">
+            <button type="submit" class="btn btn-primary" id="submit-button">Save Changes To Thread</button>
           </div>
         </div>
       </form>
