@@ -33,7 +33,7 @@ def index(request):
             category = searchForm.cleaned_data.get('category')
 
             if category == 'all':
-                return redirect("../home")
+                return redirect("../")
             else:
                 searchPosts = Post.objects.all().filter(field=category).order_by('-created_on')
 
