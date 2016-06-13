@@ -72,7 +72,7 @@ h1 {
     font-size: 100% !important;
 }
 .navbar-default {
-    background: #2494D1;
+    background: #007acc;
     border-radius: 0;
     border: 0;
 }
@@ -81,4 +81,20 @@ h1 {
 }
 #submit-button {
     border: 0;
+}
+#parsebutton {
+    background: #00b300;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+#categoryselector {
+    border: 0;
+    border-top: 1px solid rgb(202, 202, 202);
+    border-bottom: 1px solid rgb(202, 202, 202);
+    outline: 0;
 }
