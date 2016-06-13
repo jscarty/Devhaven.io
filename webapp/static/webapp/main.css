@@ -16,11 +16,17 @@ h1 {
     font-weight: normal;
     font-size: 26px;
 }
+.blue {
+    color: #1F82B8;
+    font-weight: bold;
+}
 .green {
-    color: #009933;
+    color: #0F9122;
+    font-weight: bold;
 }
 .red {
     color: red;
+    font-weight: bold;
 }
 .container-fluid a {
     color: white !important;
@@ -66,7 +72,7 @@ h1 {
     font-size: 100% !important;
 }
 .navbar-default {
-    background: #4074CF;
+    background: #2494D1;
     border-radius: 0;
     border: 0;
 }
