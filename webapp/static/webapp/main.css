@@ -17,16 +17,15 @@ h1 {
     font-size: 26px;
 }
 .green {
-    color: green;
+    color: #009933;
+    font-weight: bold;
 }
 .red {
     color: red;
-}
-.container-fluid {
-    border-bottom: 1px solid rgb(210, 210, 210);
+    font-weight: bold;
 }
 .container-fluid a {
-    color: black !important;
+    color: white !important;
     font-size: 110%;
 }
 #navtitle {
@@ -67,4 +66,16 @@ h1 {
 }
 .comments *[style], .over *[style] {
     font-size: 100% !important;
+}
+.navbar-default {
+    background: #4074CF;
+    border-radius: 0;
+    border: 0;
+}
+.postlink {
+    color: #4074CF;
+    font-weight: bold;
+}
+#submit-button {
+    border: 0;
 }
