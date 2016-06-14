@@ -79,6 +79,10 @@ h1 {
 .postlink {
     color: #4074CF;
 }
+.postlink:hover {
+    text-decoration: none;
+    color: #4074CF;
+}
 #submit-button {
     border: 0;
 }
