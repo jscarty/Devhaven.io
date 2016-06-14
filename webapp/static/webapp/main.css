@@ -95,6 +95,10 @@ h1 {
     line-height: 30px;
     padding-left: 16px;
     padding-right: 16px;
+    outline: none;
+}
+#parsebutton:focus {
+    outline: none;
 }
 #categoryselector {
     border: 0;
