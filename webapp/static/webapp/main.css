@@ -17,7 +17,6 @@ h1 {
     font-size: 26px;
 }
 .blue {
-    color: #1F82B8;
     font-weight: bold;
 }
 .green {
@@ -50,10 +49,14 @@ h1 {
 #sign-in, #sign-up {
     width: 100%;
     font-size: 100%;
+    background: rgb(40, 40, 40);
+    border: 0;
 }
 #forgot {
     font-size: 90%;
     float: right;
+    color: rgb(40, 40, 40);
+    font-weight: bold;
 }
 #third {
     border-radius: 0;
@@ -64,6 +67,8 @@ h1 {
 }
 #submit-button {
     width: 100%;
+    background: rgb(40, 40, 40);
+    border: 0;
 }
 *[style] {
     font-family: Helvetica, Arial, sans-serif !important;
@@ -72,22 +77,24 @@ h1 {
     font-size: 100% !important;
 }
 .navbar-default {
-    background: #4074CF;
+    background: rgb(40, 40, 40);
     border-radius: 0;
     border: 0;
 }
 .postlink {
-    color: #4074CF;
+    color: rgb(40, 40, 40);
+    font-weight: bold;
 }
 .postlink:hover {
-    text-decoration: none;
-    color: #4074CF;
+    text-decoration: underline;
+    color: rgb(40, 40, 40);
+    font-weight: bold;
 }
 #submit-button {
     border: 0;
 }
 #parsebutton {
-    background: #477ad1;
+    background: rgb(40, 40, 40);
     color: white;
     border: 0;
     border-radius: 4px;
