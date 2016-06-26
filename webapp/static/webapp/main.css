@@ -82,13 +82,11 @@ h1 {
     border: 0;
 }
 .postlink {
-    color: rgb(40, 40, 40);
-    font-weight: bold;
+    color: black;
 }
 .postlink:hover {
+    color: black;
     text-decoration: underline;
-    color: rgb(40, 40, 40);
-    font-weight: bold;
 }
 #submit-button {
     border: 0;
