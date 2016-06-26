@@ -89,6 +89,18 @@ h1 {
     color: black;
     text-decoration: underline;
 }
+.postlink:active {
+    color: black;
+    text-decoration: underline;
+}
+.postlink:visited {
+    color: black;
+    text-decoration: underline;
+}
+.postlink:link {
+    color: black;
+    text-decoration: underline;
+}
 #submit-button {
     border: none;
 }
