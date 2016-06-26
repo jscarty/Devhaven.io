@@ -82,6 +82,8 @@ h1 {
     border: 0;
 }
 .postlink {
+    color: black;
+    font-weight: bold;
 }
 .postlink:hover {
     color: black;
