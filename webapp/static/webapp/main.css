@@ -90,7 +90,7 @@ h1 {
     text-decoration: underline;
 }
 #submit-button {
-    border: 0;
+    border: none;
 }
 #parsebutton {
     background: rgb(40, 40, 40);
