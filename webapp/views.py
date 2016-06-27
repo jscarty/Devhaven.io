@@ -77,6 +77,7 @@ def register(request):
         try:
             user = User.objects.create_user(form.cleaned_data.get('username'), form.cleaned_data.get('email'), form.cleaned_data.get('password')) # If the user is valid, save the user into the database
             user.save()
+            return HttpResponseRedirect("../login")
         except IntegrityError as e:
             context = {
                 "title" : title,
