@@ -61,8 +61,8 @@
         <hr>
         {% for post in posts %}
             <div class="posttitle"><p><a href="../thread/{{ post.slug }}" class="postlink" style="font-size: 110%;">{{ post.title }}</a></p></div>
-            <p align="right" class="timestamp">Written by <span class="green">{{ post.author }}</span> on {{ post.created_on }}</p>
-            <p align="right" class="category">Posted in <span class="blue">{{ post.field }}</span></p>
+            <p align="right" class="timestamp">Written by <span class="blue">{{ post.author }}</span> on {{ post.created_on }}</p>
+            <p align="right" class="category">Posted in <span class="bold">{{ post.field }}</span></p>
             {% if post.commentCount > 0 %}
               <p align="right">Responses: <span class="green">{{ post.commentCount }}</span></p>
             {% endif %}
