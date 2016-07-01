@@ -3,10 +3,12 @@ html,
 body {
     margin: 0;
     padding: 0;
+    background: rgb(235, 235, 235);
     color: black;
 }
 * {
     font-family: Helvetica, Arial, sans-serif;
+    border-radius: 0 !important;
 }
 hr {
     height: 1px;
@@ -15,9 +17,6 @@ hr {
 h1 {
     font-weight: normal;
     font-size: 28px;
-}
-.blue {
-    font-weight: bold;
 }
 .bold {
 	font-weight: bold;
@@ -29,6 +28,10 @@ h1 {
 .red {
     color: red;
     font-weight: bold;
+}
+.underline {
+    color: black;
+    text-decoration: underline;
 }
 .container-fluid a {
     color: white !important;
@@ -52,13 +55,12 @@ h1 {
 #sign-in, #sign-up {
     width: 100%;
     font-size: 100%;
-    background: #007acc;
+    background: rgb(40, 40, 40);
     border: 0;
 }
 #forgot {
     font-size: 90%;
     float: right;
-    color: #007acc;
     font-weight: bold;
 }
 #third {
@@ -70,8 +72,9 @@ h1 {
 }
 #submit-button {
     width: 100%;
-    background: #007acc;
+    background: rgb(40, 40, 40);
     border: 0;
+    border-radius: 0;
 }
 *[style] {
     font-family: Helvetica, Arial, sans-serif !important;
@@ -80,7 +83,7 @@ h1 {
     font-size: 100% !important;
 }
 .navbar-default {
-    background: #007acc;
+    background: rgb(40, 40, 40);
     border-radius: 0;
     border: 0;
 }
@@ -104,10 +107,9 @@ h1 {
     border: none;
 }
 #parsebutton {
-    background: #007acc;
+    background: rgb(40, 40, 40);
     color: white;
     border: 0;
-    border-radius: 4px;
     height: 30px;
     line-height: 30px;
     padding-left: 16px;
@@ -118,8 +120,6 @@ h1 {
     outline: none;
 }
 #categoryselector {
-    border: 0;
-    border-top: 1px solid rgb(202, 202, 202);
-    border-bottom: 1px solid rgb(202, 202, 202);
+    border: 1px solid rgb(202, 202, 202);
     outline: 0;
 }
