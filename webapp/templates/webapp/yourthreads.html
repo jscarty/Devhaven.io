@@ -44,7 +44,7 @@
     <div class="postdiv">
         <div class="posttitle"><p><a href="../thread/{{ post.slug }}" class="postlink" style="font-size: 110%;">{{ post.title }}</a></p></div>
         <p align="right" class="timestamp">Written on {{ post.created_on }}</p>
-        <p align="right" class="category">Posted in <span class="bold">{{ post.field }}</span></p>
+        <p align="right" class="category">Posted in <a href="{% url 'filtercategory' post.field %}"><span class="field">{{ post.field }}</span></a></p>
         {% if post.commentCount > 0 %}
         	<p align="right">Responses: <span class="green">{{ post.commentCount }}</span></p>
         {% endif %}

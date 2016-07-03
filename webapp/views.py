@@ -49,6 +49,35 @@ def index(request):
 
     return render(request, 'webapp/home.html', context)
 
+def filtercategory(request, category):
+    global posts
+
+    posts = Post.objects.all().order_by('-created_on') # Use filter on the QuerySet to sort by time
+    context = {'posts': posts, 'authenticated': request.user.is_authenticated()}
+
+    if category == 'all':
+        for post in posts:
+            post.commentcount = len(post.comment_set.all())
+    else:
+        searchPosts = Post.objects.all().filter(field=category).order_by('-created_on')
+
+        for post in searchPosts:
+            post.commentCount = len(post.comment_set.all())
+
+        context['posts'] = searchPosts
+
+    return render(request, 'webapp/searchthreads.html', context)
+
+def userprofile(request, author):
+    userPosts = Post.objects.all().filter(author__username=author).order_by('created_on')
+
+    for post in userPosts:
+        post.commentCount = len(post.comment_set.all())
+
+    context = {'posts': userPosts, 'authenticated': request.user.is_authenticated(), 'username': author}
+
+    return render(request, 'webapp/userprofile.html', context)
+
 def register(request):
     form = UserForm(request.POST or None) # Registration form
     title = "Register." # Title

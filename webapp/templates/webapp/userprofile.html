@@ -1,0 +1,47 @@
+{% extends "webapp/index.html" %}
+{% block content %}
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="../../" id="navtitle">Devhaven.io</a>
+        </div>
+        <ul class="nav navbar-nav">
+          {% if authenticated %}
+            <li><a href="../../startthread">Start Thread</a></li>
+            <li><a href="../../yourfeed">Your Threads</a></li>
+          {% endif %}
+        </ul>
+        {% if not authenticated %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../register">Sign Up</a></li>
+            <li><a href="../../login">Login</a></li>
+          </ul>
+        {% endif %}
+        {% if authenticated %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../logout/">Logout</a></li>
+          </ul>
+        {% endif %}
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="content">
+        <br>
+          <div class="username"><b>{{ username }}'s activity:</b></div>
+        <hr>
+        {% for post in posts %}
+            <div class="posttitle"><p><a href="../thread/{{ post.slug }}" class="postlink" style="font-size: 110%;">{{ post.title }}</a></p></div>
+            <p align="right" class="timestamp">Written on {{ post.created_on }}</p>
+            <p align="right" class="category">Posted in <a href="{% url 'filtercategory' post.field %}"><span class="field">{{ post.field }}</span></a></p>
+            {% if post.commentCount > 0 %}
+              <p align="right">Responses: <span class="green">{{ post.commentCount }}</span></p>
+            {% endif %}
+            {% if post.commentCount == 0 %}
+              <p align="right">Reponses: <span class="red">{{ post.commentCount }}</span></p>
+            {% endif %}
+        <hr>
+        {% endfor %}
+      </div>
+    </div>
+{% endblock %}

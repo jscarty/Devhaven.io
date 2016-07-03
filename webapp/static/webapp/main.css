@@ -21,6 +21,14 @@ h1 {
 .bold {
     font-weight: bold;
 }
+.field {
+    color: black;
+    font-weight: bold;
+}
+.field:hover {
+    color: black;
+    text-decoration: underline;
+}
 .green {
     color: #258e25;
     font-weight: bold;
@@ -102,6 +110,9 @@ h1 {
 .postlink:visited {
     color: black;
     text-decoration: underline;
+}
+.username {
+    font-size: 125%;
 }
 #submit-button {
     border: none;

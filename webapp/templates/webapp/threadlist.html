@@ -145,12 +145,12 @@
             {% load hitcount_tags %}
             Views: {% get_hit_count for post %}<br>
             {% if post.title == "Best Resources for Front-end Development" %}
-              Written by <span class="author"><span class="green">mememaster_owen</span> on {{ post.created_on }}<br>
+              Written by <a href="{% url 'userprofile' post.author %}"><span class="author"><span class="green">mememaster_owen</span></a> on {{ post.created_on }}<br>
             {% endif %}
             {% if post.title != "Best Resources for Front-end Development" %}
-              Written by <span class="author"><span class="green">{{ post.author }}</span> on {{ post.created_on }}<br>
+              Written by <a href="{% url 'userprofile' post.author %}"><span class="author"><span class="green">{{ post.author }}</span></a> on {{ post.created_on }}<br>
             {% endif %}
-            Posted in <span class="green">{{ post.field }}</span><br>
+            Posted in <a href="{% url 'filtercategory' post.field %}"><span class="green">{{ post.field }}</span></a><br>
             {% if post.author == request.user  or request.user.username == "henrydavidzhu" %}
               <a href="{% url 'post_edit' pk=post.pk %}" class="green">Edit</a> or 
 			  <a href="{% url 'delete_new' pk=post.pk %}" class="green">Delete</a> this thread<br>
@@ -193,7 +193,7 @@
                   {{ comment.text | safe }}
               </p>
               <p align="right">
-                  <span class="green">{{ comment.name }}</span> said on {{ comment.created_on }}<br>
+                  <a href="{% url 'userprofile' comment.name %}"><span class="green">{{ comment.name }}</span></a> said on {{ comment.created_on }}<br>
                   {% if comment.name == request.user or request.user.username == "henrydavidzhu" %}
                      <a href="{% url 'response_edit' pk=comment.pk %}" class="green">Edit</a> or 
 					 <a href="{% url 'delete_response' pk=comment.pk %}" class="green">Delete</a> this response<br>
