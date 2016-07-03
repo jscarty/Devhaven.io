@@ -110,10 +110,10 @@ h1 {
     background: rgb(40, 40, 40);
     color: white;
     border: 0;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     outline: none;
 }
 #parsebutton:focus {
