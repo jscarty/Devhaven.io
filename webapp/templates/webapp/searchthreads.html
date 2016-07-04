@@ -29,7 +29,7 @@
         <hr>
         {% for post in posts %}
             <div class="posttitle"><p><a href="../../../thread/{{ post.slug }}" class="postlink" style="font-size: 110%;">{{ post.title }}</a></p></div>
-            <p align="right" class="timestamp">Written by <span class="green">{{ post.author }}</span> on {{ post.created_on }}</p>
+            <p align="right" class="timestamp">Written by <a href="{% url 'userprofile' post.author %}"><span class="green">{{ post.author }}</span></a> on {{ post.created_on }}</p>
             <p align="right" class="category">Posted in <a href="{% url 'filtercategory' post.field %}"><span class="field">{{ post.field }}</span></a></p>
             {% if post.commentCount > 0 %}
               <p align="right">Responses: <span class="green">{{ post.commentCount }}</span></p>
