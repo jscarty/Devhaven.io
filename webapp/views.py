@@ -86,6 +86,9 @@ def userprofile(request, author):
     for post in userPosts:
         post.commentCount = len(post.comment_set.all())
 
+    for post in userPosts: # Generate mailto link (html href doesn't allow concatenation of strings)
+        post.reportLink = "mailto:henry.david.zhu@gmail.com?Subject=Flagged%20-%20" + post.title + "%20(Reason%20below)"
+
     context = {'posts': userPosts, 'authenticated': request.user.is_authenticated(), 'username': author}
 
     return render(request, 'webapp/userprofile.html', context)
