@@ -40,12 +40,18 @@ def index(request):
                 for post in searchPosts:
                     post.commentCount = len(post.comment_set.all())
 
+                for post in searchPosts: # Generate mailto link (html href doesn't allow concatenation of strings)
+                    post.reportLink = "mailto:henry.david.zhu@gmail.com?Subject=Flagged%20-%20" + post.title + "%20(Reason%20below)"
+
             context['posts'] = searchPosts
         else:
             print(searchForm.errors)
 
     for post in posts:
         post.commentCount = len(post.comment_set.all())
+
+    for post in posts: # Generate mailto link (html href doesn't allow concatenation of strings)
+        post.reportLink = "mailto:henry.david.zhu@gmail.com?Subject=Flagged%20-%20" + post.title + "%20(Reason%20below)"
 
     return render(request, 'webapp/home.html', context)
 
@@ -275,5 +281,8 @@ def your_post(request):
 	
     for post in posts2:
         post.commentCount = len(post.comment_set.all())
+
+    for post in posts2:
+        post.reportLink = "mailto:henry.david.zhu@gmail.com?Subject=Flagged%20-%20" + post.title + "%20(Reason%20below)"
 
     return render(request, 'webapp/yourthreads.html', {'authenticated': request.user.is_authenticated(), 'posts':posts2, 'numPosts':numPosts})

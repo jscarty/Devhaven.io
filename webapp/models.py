@@ -31,6 +31,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey('auth.User', null=True, blank=True)
     commentCount = 0
+    reportlink = ""
 
     CHOICES = [
         ('Hardware and OS', 'Hardware and OS'),
