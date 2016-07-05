@@ -64,11 +64,17 @@ def filtercategory(request, category):
     if category == 'all':
         for post in posts:
             post.commentcount = len(post.comment_set.all())
+
+        for post in posts: # Generate mailto link (html href doesn't allow concatenation of strings)
+            post.reportLink = "mailto:henry.david.zhu@gmail.com?Subject=Flagged%20-%20" + post.title + "%20(Reason%20below)"
     else:
         searchPosts = Post.objects.all().filter(field=category).order_by('-created_on')
 
         for post in searchPosts:
             post.commentCount = len(post.comment_set.all())
+
+        for post in searchPosts: # Generate mailto link (html href doesn't allow concatenation of strings)
+            post.reportLink = "mailto:henry.david.zhu@gmail.com?Subject=Flagged%20-%20" + post.title + "%20(Reason%20below)"
 
         context['posts'] = searchPosts
 
