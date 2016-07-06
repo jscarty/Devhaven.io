@@ -17,8 +17,18 @@ from django.utils import timezone
 from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
 import operator
+import math
 
 posts = Post.objects.all().filter().order_by('-created_on') # Get all the posts on Devhaven.io
+
+def filterPages(posts, context):
+    for post in posts:
+        post.commentCount = len(post.comment_set.all())
+
+    for post in posts: # Generate mailto link (html href doesn't allow concatenation of strings)
+        post.reportLink = "mailto:henry.david.zhu@gmail.com?Subject=Flagged%20-%20" + post.title + "%20(Reason%20below)"
+
+    context['posts'] = posts
 
 def index(request):
     global posts
@@ -36,22 +46,13 @@ def index(request):
                 return redirect("../")
             else:
                 searchPosts = Post.objects.all().filter(field=category).order_by('-created_on')
-
-                for post in searchPosts:
-                    post.commentCount = len(post.comment_set.all())
-
-                for post in searchPosts: # Generate mailto link (html href doesn't allow concatenation of strings)
-                    post.reportLink = "mailto:henry.david.zhu@gmail.com?Subject=Flagged%20-%20" + post.title + "%20(Reason%20below)"
-
-            context['posts'] = searchPosts
+                filterPages(searchPosts, context)
+                
+                return render(request, 'webapp/home.html', context)
         else:
             print(searchForm.errors)
 
-    for post in posts:
-        post.commentCount = len(post.comment_set.all())
-
-    for post in posts: # Generate mailto link (html href doesn't allow concatenation of strings)
-        post.reportLink = "mailto:henry.david.zhu@gmail.com?Subject=Flagged%20-%20" + post.title + "%20(Reason%20below)"
+    filterPages(posts, context)
 
     return render(request, 'webapp/home.html', context)
 
@@ -81,7 +82,7 @@ def filtercategory(request, category):
     return render(request, 'webapp/searchthreads.html', context)
 
 def userprofile(request, author):
-    userPosts = Post.objects.all().filter(author__username=author).order_by('created_on')
+    userPosts = Post.objects.all().filter(author__username=author).order_by('created_on').reverse()
 
     for post in userPosts:
         post.commentCount = len(post.comment_set.all())
