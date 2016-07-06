@@ -31,7 +31,7 @@
           <div class="username"><b>{{ username }}'s activity:</b></div>
         <hr>
         {% for post in posts %}
-            <div class="posttitle"><p><a href="../thread/{{ post.slug }}" class="postlink" style="font-size: 110%;">{{ post.title }}</a> / <a onclick="copyText('{{ post.slug }}')"><i class="fa fa-link" aria-hidden="true" title="link" id="black"></i></a> / <a href='{{ post.reportLink }}'><i class="fa fa-flag" aria-hidden="true" title="flag" id="pointer"></i></a></p></div>
+            <div class="posttitle"><p><a href="../../thread/{{ post.slug }}" class="postlink" style="font-size: 110%;">{{ post.title }}</a> / <a onclick="copyText('{{ post.slug }}')"><i class="fa fa-link" aria-hidden="true" title="link" id="black"></i></a> / <a href='{{ post.reportLink }}'><i class="fa fa-flag" aria-hidden="true" title="flag" id="pointer"></i></a></p></div>
             <p align="right" class="timestamp">Written on {{ post.created_on }}</p>
             <p align="right" class="category">Posted in <a href="{% url 'filtercategory' post.field %}"><span class="field">{{ post.field }}</span></a></p>
             {% if post.commentCount > 0 %}
